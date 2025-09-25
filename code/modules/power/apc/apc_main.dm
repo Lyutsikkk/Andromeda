@@ -528,8 +528,10 @@
 		if("deoccupy")
 			if(get_malf_status(user))
 				malfvacate()
-		if("reboot")		// ADD ANDROMEDA
-			reboot() 		// END ANDROMEDA
+		/// ANDROMEDA ADDITION START - Перезапуск ЛКП
+		if("reboot")
+			reboot()
+		/// ANDROMEDA ADDITION END - Перезапуск ЛКП
 		if("emergency_lighting")
 			emergency_lights = !emergency_lights
 			for(var/obj/machinery/light/area_light as anything in get_lights())
@@ -553,13 +555,13 @@
 				lights += found_light
 	return lights
 
-// ADD ANDROMEDA
+/// ANDROMEDA ADDITION START - Перезапуск ЛКП
 /obj/machinery/power/apc/proc/reboot()
 	failure_timer = 0
 	force_update = FALSE
 	update_appearance()
 	update()
-// END ANDROMEDA
+/// ANDROMEDA ADDITION END - Перезапуск ЛКП
 
 /**
  * APC early processing. This gets processed after any other machine on the powernet does.

@@ -44,7 +44,7 @@ Nothing else in the console has ID requirements.
 		return material.name
 	else if(GLOB.chemical_reagents_list[ID])
 		var/datum/reagent/reagent = GLOB.chemical_reagents_list[ID]
-		return reagent.name
+		return reagent.declent_ru(NOMINATIVE)
 	return ID
 
 /obj/machinery/computer/rdconsole/post_machine_initialize()

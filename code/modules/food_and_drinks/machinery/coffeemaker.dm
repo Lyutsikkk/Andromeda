@@ -740,7 +740,7 @@
 	var/list/reference_bean_reagents = list()
 	var/obj/item/food/grown/coffee/reference_bean = new /obj/item/food/grown/coffee(src)
 	for(var/datum/reagent/ref_bean_reagent as anything in reference_bean.reagents.reagent_list)
-		reference_bean_reagents += ref_bean_reagent.name
+		reference_bean_reagents += ref_bean_reagent.declent_ru(NOMINATIVE)
 
 	// add all the reagents from the coffee beans to the coffeepot (ommit the ones from the reference bean)
 	var/list/reagent_delta = list()

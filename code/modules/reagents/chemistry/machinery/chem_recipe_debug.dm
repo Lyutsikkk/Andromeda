@@ -292,7 +292,7 @@
 
 		//create ui data
 		active_reactions += list(list(
-			"name" = reagent.name,
+			"name" = reagent.declent_ru(NOMINATIVE),
 			"danger" = danger,
 			"overheat" = overheat,
 			"purityAlert" = purity_alert,
@@ -307,7 +307,7 @@
 		//additional data for competitive reactions
 		if(equilibrium.reaction.reaction_flags & REACTION_COMPETITIVE) //We have a compeitive reaction - concatenate the results for the different reactions
 			for(var/entry in active_reactions)
-				if(entry["name"] == reagent.name) //If we have multiple reaction methods for the same result - combine them
+				if(entry["name"] == reagent.declent_ru(NOMINATIVE)) //If we have multiple reaction methods for the same result - combine them
 					entry["reactedVol"] = equilibrium.reacted_vol
 					entry["targetVol"] = round(equilibrium.target_vol, 1)//Use the first result reagent to name the reaction detected
 					entry["quality"] = (entry["quality"] + equilibrium.reaction_quality) /2
@@ -343,7 +343,7 @@
 		var/list/beakerContents = list()
 		if(length(target_reagents.reagent_list))
 			for(var/datum/reagent/reagent in target_reagents.reagent_list)
-				beakerContents += list(list("name" = reagent.name, "volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING)))
+				beakerContents += list(list("name" = reagent.declent_ru(NOMINATIVE), "volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING)))
 
 		if(!QDELETED(required_container))
 			//as of now we only decode soup pots. If more exotic containers are made make sure to add them here

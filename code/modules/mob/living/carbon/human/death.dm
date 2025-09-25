@@ -42,7 +42,7 @@ GLOBAL_LIST_EMPTY(dead_players_during_shift)
 /mob/living/carbon/human/proc/reagents_readout()
 	var/readout = "[get_bloodtype()?.get_blood_name() || "Blood"]stream:"
 	for(var/datum/reagent/reagent in reagents?.reagent_list)
-		readout += "<br>[round(reagent.volume, 0.001)] units of [reagent.name]"
+		readout += "<br>[round(reagent.volume, 0.001)] units of [reagent.declent_ru(NOMINATIVE)]"
 
 	readout += "<br>Stomach:"
 	var/obj/item/organ/stomach/belly = get_organ_slot(ORGAN_SLOT_STOMACH)

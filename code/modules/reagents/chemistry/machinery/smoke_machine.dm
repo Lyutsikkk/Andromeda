@@ -184,7 +184,7 @@
 	tank_data["currentVolume"] = reagents.total_volume
 	var/list/tankContents = list()
 	for(var/datum/reagent/reagent in reagents.reagent_list)
-		tankContents += list(list("name" = reagent.name, "volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING)))
+		tankContents += list(list("name" = reagent.declent_ru(NOMINATIVE), "volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING)))
 	tank_data["contents"] = tankContents
 	.["tank"] = tank_data
 

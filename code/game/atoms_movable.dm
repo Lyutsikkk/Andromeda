@@ -505,12 +505,12 @@
 		if(NAMEOF(src, glide_size))
 			set_glide_size(var_value)
 			. = TRUE
-		// ADD ANDROMEDA (барки)
+		// ANDROMEDA ADDITION START - Барки
 		if(NAMEOF(src, blooper))
 			if(isfile(var_value))
 				blooper = sound(var_value) //bark() ожидает, что vocal_bark уже является датумом звука, по соображениям производительности. Удобство админских дел!
 			. = TRUE
-		// END ANDROMEDA (барки)
+		// ANDROMEDA ADDITION END - Барки
 
 
 	if(!isnull(.))

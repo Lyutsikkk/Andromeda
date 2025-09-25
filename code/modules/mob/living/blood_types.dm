@@ -42,9 +42,21 @@
 /datum/blood_type/proc/type_key()
 	return type
 
+/** REMOVED ANDROMEDA
 /// Name of the reagent we use for blood
 /datum/blood_type/proc/get_blood_name()
 	return capitalize(LOWER_TEXT(reagent_type::name))
+ */
+
+/// Название реагента, который мы используем для крови или иной жидкости, если другая раса
+// ADD ANDROMEDA
+// Rewokin: Тут был прикол, что он сразу выдавал название реагента, замена в духе "return capitalize(LOWER_TEXT(reagent_type::declent_ru(NOMINATIVE)))" не сработало.
+/datum/blood_type/proc/get_blood_name()
+	var/datum/reagent/temp_reagent = new reagent_type()
+	var/get_blood_ru_name = temp_reagent.declent_ru(GENITIVE)
+	qdel(temp_reagent)
+	return capitalize(LOWER_TEXT(get_blood_ru_name))
+// END ANDROMEDA
 
 /// Type string of this bloodtype. Used to prevent "Oil type: Oil" scenarios
 /datum/blood_type/proc/get_type()

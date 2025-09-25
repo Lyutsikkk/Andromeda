@@ -12,7 +12,7 @@ import {
 import type { BooleanLike } from 'tgui-core/react';
 
 import { useBackend } from '../backend';
-import { DEPARTMENTS_RU, JOBS_RU, ReverseJobsRu,} from '../andromeda/ru_jobs'; /// ADD ANDROMEDA-13: Рус.Проф.
+import { DEPARTMENTS_RU, JOBS_RU, ReverseJobsRu,} from '../andromeda/ru_jobs'; /// ANDROMEDA ADDITIO - Рус.Проф.
 import { Window } from '../layouts';
 import { JOB2ICON } from './common/JobToIcon';
 

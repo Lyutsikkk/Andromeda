@@ -26372,3 +26372,21 @@ accusative = "теплообменник"
 instrumental = "теплообменником"
 prepositional = "теплообменнике"
 gender = "male"
+
+["Blood"]
+nominative = "Кровь"
+genitive = "Крови"
+dative = "Крови"
+accusative = "Кровь"
+instrumental = "Кровью"
+prepositional = "Крови"
+gender = "female"
+
+["glass of tomato juice"]
+nominative = "стакан томатного сока"
+genitive = "стакана томатного сока"
+dative = "стакану томатного сока"
+accusative = "стакан томатного сока"
+instrumental = "стаканом томатного сока"
+prepositional = "стакане томатного сока"
+gender = "male"

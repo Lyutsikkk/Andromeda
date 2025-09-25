@@ -81,7 +81,7 @@
 	for(var/reagentID in dispensable_reagents)
 		var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagentID]
 		if(reagent)
-			var/chemname = reagent.name
+			var/chemname = reagent.declent_ru(NOMINATIVE)
 			if(is_hallucinating && prob(5))
 				chemname = "[pick_list_replacements("hallucination.json", "chemicals")]"
 			chemicals += list(list("title" = chemname, "id" = reagent.name))

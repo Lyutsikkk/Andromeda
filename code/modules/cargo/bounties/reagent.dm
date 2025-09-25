@@ -84,7 +84,7 @@
 
 	var/reagent_type = pick(possible_reagents)
 	wanted_reagent = new reagent_type
-	name = wanted_reagent.name
+	name = wanted_reagent.declent_ru(NOMINATIVE)
 	description = "CentCom is thirsty! Send a shipment of [name] to CentCom to quench the company's thirst."
 	reward += rand(0, 2) * 500
 
@@ -121,7 +121,7 @@
 
 	var/reagent_type = pick(possible_reagents)
 	wanted_reagent = new reagent_type
-	name = wanted_reagent.name
+	name = wanted_reagent.declent_ru(NOMINATIVE)
 	description = "CentCom is offering a reward for talented mixologists. Ship a container of [name] to claim the prize."
 	reward += rand(0, 4) * 500
 
@@ -158,7 +158,7 @@
 
 	var/reagent_type = pick(possible_reagents)
 	wanted_reagent = new reagent_type
-	name = wanted_reagent.name
+	name = wanted_reagent.declent_ru(NOMINATIVE)
 	description = "CentCom is in desperate need of the chemical [name]. Ship a container of it to be rewarded."
 	reward += rand(0, 4) * 500 //4000 to 6000 credits
 
@@ -189,7 +189,7 @@
 
 	var/reagent_type = pick(possible_reagents)
 	wanted_reagent = new reagent_type
-	name = wanted_reagent.name
+	name = wanted_reagent.declent_ru(NOMINATIVE)
 	description = "CentCom is paying premium for the chemical [name]. Ship a container of it to be rewarded."
 	reward += rand(0, 5) * 750 //6000 to 9750 credits
 
@@ -246,7 +246,7 @@
 
 	var/datum/reagent/reagent_type = pick(possible_reagents)
 	wanted_reagent = new reagent_type
-	name = "[wanted_reagent.name] pills"
+	name = "[wanted_reagent.declent_ru(NOMINATIVE)] pills"
 	required_ammount += rand(1,60)
 	wanted_vol += rand(1,20)
 	description = "CentCom requires [required_ammount] of [name] containing at least [wanted_vol] each. Ship a container of it to be rewarded."

@@ -386,7 +386,7 @@
 				recommendation += "переливание [blood_type.get_blood_name()]"
 			else
 				recommendation += "немедленнаое переливание [blood_type.get_blood_name()]"
-			level_format = conditional_tooltip(level_format, "Рекомендации: [english_list(recommendation, and_text = " or ")].", tochat)
+			level_format = conditional_tooltip(level_format, "Рекомендации: [english_list(recommendation, and_text = " или ")].", tochat)
 		else
 			level_format = "[blood_percent]%, [target.blood_volume] мл"
 
@@ -536,7 +536,7 @@
 				if(reagent_types_to_check)
 					if(!istype(reagent, reagent_types_to_check))
 						continue
-				render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] единиц в [reagent.name][reagent.overdosed ? "</span> - [span_bolddanger("ПЕРЕДОЗИРОВКА")]" : ".</span>"]<br>"
+				render_block += "<span class='notice ml-2'>[round(reagent.volume, 0.001)] единиц в [reagent.declent_ru(GENITIVE)][reagent.overdosed ? "</span> - [span_bolddanger("ПЕРЕДОЗИРОВКА")]" : ".</span>"]<br>"
 
 		if(!length(render_block)) //If no VISIBLY DISPLAYED reagents are present, we report as if there is nothing.
 			render_list += "<span class='notice ml-1'>Subject contains no reagents in their [LOWER_TEXT(target.get_bloodtype()?.get_blood_name()) || "blood"]stream.</span><br>"

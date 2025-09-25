@@ -136,13 +136,13 @@
 			to_chat(user, "Не удалось найти реагент!")
 			ui_reagent_id = null
 		else
-			data["reagent_mode_reagent"] = list("name" = reagent.name, "id" = reagent.type, "desc" = reagent.description, "reagentCol" = reagent.color, "pH" = reagent.ph, "pHCol" = convert_ph_to_readable_color(reagent.ph), "metaRate" = reagent.metabolization_rate, "OD" = reagent.overdose_threshold)
+			data["reagent_mode_reagent"] = list("name" = reagent.declent_ru(NOMINATIVE), "id" = reagent.type, "desc" = reagent.description, "reagentCol" = reagent.color, "pH" = reagent.ph, "pHCol" = convert_ph_to_readable_color(reagent.ph), "metaRate" = reagent.metabolization_rate, "OD" = reagent.overdose_threshold)
 			data["reagent_mode_reagent"]["addictions"] = list()
 			data["reagent_mode_reagent"]["addictions"] = parse_addictions(reagent)
 
 			var/datum/reagent/inverse_reagent = GLOB.chemical_reagents_list[reagent.inverse_chem]
 			if(inverse_reagent)
-				data["reagent_mode_reagent"] += list("inverseReagent" = inverse_reagent.name, "inverseId" = inverse_reagent.type)
+				data["reagent_mode_reagent"] += list("inverseReagent" = inverse_reagent.declent_ru(NOMINATIVE), "inverseId" = inverse_reagent.type)
 
 			if(reagent.chemical_flags & REAGENT_DEAD_PROCESS)
 				data["reagent_mode_reagent"] += list("deadProcess" = TRUE)
@@ -193,7 +193,7 @@
 					ui_reaction_index = i //update our index
 					break
 				i += 1
-			data["reagent_mode_recipe"] = list("name" = primary_reagent.name, "id" = reaction.type, "hasProduct" = has_product, "reagentCol" = primary_reagent.color, "thermodynamics" = generate_thermodynamic_profile(reaction), "explosive" = generate_explosive_profile(reaction), "lowerpH" = reaction.optimal_ph_min, "upperpH" = reaction.optimal_ph_max, "thermics" = determine_reaction_thermics(reaction), "thermoUpper" = reaction.rate_up_lim, "minPurity" = reaction.purity_min, "inversePurity" = primary_reagent.inverse_chem_val, "tempMin" = reaction.required_temp, "explodeTemp" = reaction.overheat_temp, "reqContainer" = container_name, "subReactLen" = sub_reaction_length, "subReactIndex" = ui_reaction_index)
+			data["reagent_mode_recipe"] = list("name" = primary_reagent.declent_ru(NOMINATIVE), "id" = reaction.type, "hasProduct" = has_product, "reagentCol" = primary_reagent.color, "thermodynamics" = generate_thermodynamic_profile(reaction), "explosive" = generate_explosive_profile(reaction), "lowerpH" = reaction.optimal_ph_min, "upperpH" = reaction.optimal_ph_max, "thermics" = determine_reaction_thermics(reaction), "thermoUpper" = reaction.rate_up_lim, "minPurity" = reaction.purity_min, "inversePurity" = primary_reagent.inverse_chem_val, "tempMin" = reaction.required_temp, "explodeTemp" = reaction.overheat_temp, "reqContainer" = container_name, "subReactLen" = sub_reaction_length, "subReactIndex" = ui_reaction_index)
 
 		//Results sweep
 		var/has_reagent = "default"
@@ -201,7 +201,7 @@
 			var/datum/reagent/reagent = find_reagent_object_from_type(_reagent)
 			if(has_reagent(_reagent))
 				has_reagent = "green"
-			data["reagent_mode_recipe"]["products"] += list(list("name" = reagent.name, "id" = reagent.type, "ratio" = reaction.results[reagent.type], "hasReagentCol" = has_reagent))
+			data["reagent_mode_recipe"]["products"] += list(list("name" = reagent.declent_ru(NOMINATIVE), "id" = reagent.type, "ratio" = reaction.results[reagent.type], "hasReagentCol" = has_reagent))
 
 		//Reactant sweep
 		for(var/_reagent in reaction.required_reagents)
@@ -225,9 +225,9 @@
 				//Subreactions sweep (if any)
 				for(var/_sub_reagent in sub_reaction.required_reagents)
 					var/datum/reagent/sub_reagent = find_reagent_object_from_type(_sub_reagent)
-					tooltip += "[sub_reaction.required_reagents[_sub_reagent]]u [sub_reagent.name]\n" //I forgot the better way of doing this - fix this after this works
+					tooltip += "[sub_reaction.required_reagents[_sub_reagent]]мл. [sub_reagent.declent_ru(NOMINATIVE)]\n" //I forgot the better way of doing this - fix this after this works
 					tooltip_bool = TRUE
-			data["reagent_mode_recipe"]["reactants"] += list(list("name" = reagent.name, "id" = reagent.type, "ratio" = reaction.required_reagents[reagent.type], "color" = color_r, "tooltipBool" = tooltip_bool, "tooltip" = tooltip))
+			data["reagent_mode_recipe"]["reactants"] += list(list("name" = reagent.declent_ru(NOMINATIVE), "id" = reagent.type, "ratio" = reaction.required_reagents[reagent.type], "color" = color_r, "tooltipBool" = tooltip_bool, "tooltip" = tooltip))
 
 		//Catalyst sweep
 		for(var/_reagent in reaction.required_catalysts)
@@ -243,9 +243,9 @@
 				//Subreactions sweep (if any)
 				for(var/_sub_reagent in sub_reaction.required_reagents)
 					var/datum/reagent/sub_reagent = find_reagent_object_from_type(_sub_reagent)
-					tooltip += "[sub_reaction.required_reagents[_sub_reagent]]u [sub_reagent.name]\n" //I forgot the better way of doing this - fix this after this works
+					tooltip += "[sub_reaction.required_reagents[_sub_reagent]]u [sub_reagent.declent_ru(NOMINATIVE)]\n" //I forgot the better way of doing this - fix this after this works
 					tooltip_bool = TRUE
-			data["reagent_mode_recipe"]["catalysts"] += list(list("name" = reagent.name, "id" = reagent.type, "ratio" = reaction.required_catalysts[reagent.type], "color" = color_r, "tooltipBool" = tooltip_bool, "tooltip" = tooltip))
+			data["reagent_mode_recipe"]["catalysts"] += list(list("name" = reagent.declent_ru(NOMINATIVE), "id" = reagent.type, "ratio" = reaction.required_catalysts[reagent.type], "color" = color_r, "tooltipBool" = tooltip_bool, "tooltip" = tooltip))
 		data["reagent_mode_recipe"]["isColdRecipe"] = reaction.is_cold_recipe
 	else
 		data["reagent_mode_recipe"] = null

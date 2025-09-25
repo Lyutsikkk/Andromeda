@@ -38,7 +38,7 @@
 	var/list/new_table = list()
 	for(var/datum/reagent/reagent as anything in entity.reagents?.reagent_list)
 		var/list/entry = list()
-		entry["reagent"] = reagent.name
+		entry["reagent"] = reagent.declent_ru(NOMINATIVE)
 		entry["volume"] = reagent.volume
 		new_table += list(entry)
 	result.set_output(new_table)

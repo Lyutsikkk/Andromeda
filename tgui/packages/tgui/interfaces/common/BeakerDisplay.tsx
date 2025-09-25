@@ -49,7 +49,7 @@ export const BeakerDisplay = (props: BeakerProps) => {
           (!!beaker && (
             <>
               <AnimatedNumber initial={0} value={beaker.currentVolume} />/
-              {beaker.maxVolume} мл
+              {beaker.maxVolume}мл.
             </>
           )) ||
           'Отсутствует'}
@@ -61,7 +61,7 @@ export const BeakerDisplay = (props: BeakerProps) => {
         </Box>
         {beakerContents.map((chemical) => (
           <Box key={chemical.name} color="label">
-            <AnimatedNumber initial={0} value={chemical.volume} /> мл{' '}
+            <AnimatedNumber initial={0} value={chemical.volume} />мл. {' '}
             {chemical.name}
           </Box>
         ))}
@@ -88,7 +88,7 @@ export const BeakerSectionDisplay = (props: BeakerProps) => {
         !!beaker && (
           <>
             <Box inline color="label" mr={2}>
-              {beaker.currentVolume} / {beaker.maxVolume} мл
+              {beaker.currentVolume} / {beaker.maxVolume}мл.
             </Box>
             <Button icon="eject" onClick={() => act('eject')}>
               Извлечь
@@ -102,7 +102,7 @@ export const BeakerSectionDisplay = (props: BeakerProps) => {
       </Box>
       {beakerContents.map((chemical) => (
         <Box key={chemical.name} color="label">
-          <AnimatedNumber initial={0} value={chemical.volume} /> мл{' '}
+          <AnimatedNumber initial={0} value={chemical.volume} />мл. {' '}
           {chemical.name}
         </Box>
       ))}

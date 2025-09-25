@@ -182,7 +182,7 @@
 		balloon_alert(user, "no reagent selected!")
 		return
 	if(!stored_reagents.has_reagent(selected_reagent.type, amount_per_transfer_from_this))
-		balloon_alert(user, "not enough [selected_reagent.name]!")
+		balloon_alert(user, "not enough [selected_reagent.declent_ru(NOMINATIVE)]!")
 		return
 
 	if(injectee.try_inject(user, user.zone_selected, injection_flags = INJECT_TRY_SHOW_ERROR_MESSAGE | (bypass_protection ? INJECT_CHECK_PENETRATE_THICK : 0)))
@@ -193,7 +193,7 @@
 		hypospray_injector.add_reagent(selected_reagent.type, amount_per_transfer_from_this, reagtemp = dispensed_temperature, no_react = TRUE)
 
 		to_chat(injectee, span_warning("You feel a tiny prick!"))
-		to_chat(user, span_notice("You inject [injectee] with the injector ([selected_reagent.name])."))
+		to_chat(user, span_notice("You inject [injectee] with the injector ([selected_reagent.declent_ru(NOMINATIVE)])."))
 
 		if(injectee.reagents)
 			hypospray_injector.trans_to(injectee, amount_per_transfer_from_this, transferred_by = user, methods = INJECT)
@@ -212,7 +212,7 @@
 	var/list/available_reagents = list()
 	for(var/datum/reagent/reagent in stored_reagents.reagent_list)
 		available_reagents.Add(list(list(
-			"name" = reagent.name,
+			"name" = reagent.declent_ru(NOMINATIVE),
 			"volume" = round(reagent.volume, 0.01) - 1,
 			"description" = reagent.description,
 		))) // list in a list because Byond merges the first list...
@@ -241,7 +241,7 @@
 				var/obj/item/robot_model/container_model = loc
 				cyborg = container_model.robot
 			playsound(cyborg, 'sound/effects/pop.ogg', 50, FALSE)
-			balloon_alert(cyborg, "dispensing [selected_reagent.name]")
+			balloon_alert(cyborg, "dispensing [selected_reagent.declent_ru(NOMINATIVE)]")
 			break
 
 /obj/item/reagent_containers/borghypo/examine(mob/user)
@@ -366,12 +366,12 @@
 		// Split the reagents into alcoholic/non-alcoholic
 		if(istype(reagent, /datum/reagent/consumable/ethanol))
 			alcohol_reagents.Add(list(list(
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(NOMINATIVE),
 				"volume" = round(reagent.volume, 0.01) - 1,
 			))) // list in a list because Byond merges the first list...
 		else
 			drink_reagents.Add(list(list(
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(NOMINATIVE),
 				"volume" = round(reagent.volume, 0.01) - 1,
 			)))
 
@@ -404,7 +404,7 @@
 		balloon_alert(user, "no reagent selected!")
 		return ITEM_INTERACT_BLOCKING
 	if(!stored_reagents.has_reagent(selected_reagent.type, amount_per_transfer_from_this))
-		balloon_alert(user, "not enough [selected_reagent.name]!")
+		balloon_alert(user, "not enough [selected_reagent.declent_ru(NOMINATIVE)]!")
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_with.reagents.total_volume >= interacting_with.reagents.maximum_volume)
 		balloon_alert(user, "it's full!")
@@ -443,7 +443,7 @@
 	var/list/condiments = list()
 	for(var/datum/reagent/reagent in stored_reagents.reagent_list)
 		condiments.Add(list(list(
-			"name" = reagent.name,
+			"name" = reagent.declent_ru(NOMINATIVE),
 			"volume" = round(reagent.volume, 0.01) - 1,
 			"description" = reagent.description,
 		))) // list in a list because Byond merges the first list...
@@ -466,7 +466,7 @@
 		balloon_alert(user, "no reagent selected!")
 		return ITEM_INTERACT_BLOCKING
 	if(!stored_reagents.has_reagent(selected_reagent.type, amount_per_transfer_from_this))
-		balloon_alert(user, "not enough [selected_reagent.name]!")
+		balloon_alert(user, "not enough [selected_reagent.declent_ru(NOMINATIVE)]!")
 		return ITEM_INTERACT_BLOCKING
 	if(interacting_with.reagents.total_volume >= interacting_with.reagents.maximum_volume)
 		balloon_alert(user, "it's full!")

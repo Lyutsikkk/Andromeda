@@ -58,7 +58,7 @@
 	if (!length(blood_stains))
 		return
 	var/datum/blood_type/blood_type = blood_stains[blood_stains[length(blood_stains)]]
-	var/blood_descriptor = "blood"
+	var/blood_descriptor = "крови"
 	if(istype(blood_type))
 		blood_descriptor = LOWER_TEXT(blood_type.get_blood_name())
 

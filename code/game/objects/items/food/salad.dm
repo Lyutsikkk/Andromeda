@@ -226,7 +226,7 @@
 	var/list/soups_found = list()
 	for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
 		if(istype(current_reagent, /datum/reagent/consumable/nutriment/soup))
-			soups_found += "&bull; [round(current_reagent.volume, 0.01)] units of [current_reagent.name]"
+			soups_found += "&bull; [round(current_reagent.volume, 0.01)] мл. [current_reagent.declent_ru(NOMINATIVE)]"
 		else
 			unknown_volume += current_reagent.volume
 

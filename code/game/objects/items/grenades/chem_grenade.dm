@@ -66,7 +66,7 @@
 
 	for (var/obj/item/beaker as anything in beakers)
 		for (var/datum/reagent/reagent in beaker.reagents.reagent_list)
-			. += span_notice("[reagent.volume] units of [reagent.name] in \the [beaker].")
+			. += span_notice("[reagent.volume] мл. [reagent.declent_ru(NOMINATIVE)] в [beaker].")
 
 	if (length(beakers) == 1)
 		. += span_notice("You detect no second beaker in the grenade.")

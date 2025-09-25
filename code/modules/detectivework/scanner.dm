@@ -173,7 +173,7 @@
 
 		// Only get reagents from non-mobs.
 		for(var/datum/reagent/present_reagent as anything in scanned_atom.reagents?.reagent_list)
-			LAZYADD(log_entry_data[DETSCAN_CATEGORY_DRINK], list(present_reagent.name = present_reagent.volume))
+			LAZYADD(log_entry_data[DETSCAN_CATEGORY_DRINK], list(present_reagent.declent_ru(NOMINATIVE) = present_reagent.volume))
 
 			// Get blood data from the blood reagent.
 			if(!istype(present_reagent, /datum/reagent/blood))

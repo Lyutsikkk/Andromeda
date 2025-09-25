@@ -338,7 +338,7 @@
 		var/list/beakerContents = list()
 		for(var/datum/reagent/reagent as anything in beaker_2_reagents.reagent_list)
 			beakerContents += list(list(
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(NOMINATIVE),
 				"volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING),
 				"mass" = reagent.mass,
 				"purity" = round(reagent.purity * 100),

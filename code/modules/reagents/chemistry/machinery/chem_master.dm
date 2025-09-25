@@ -304,7 +304,7 @@
 			for(var/datum/reagent/reagent as anything in beaker.reagents.reagent_list)
 				beakerContents += list(list(
 					"ref" = "[reagent.type]",
-					"name" = reagent.name,
+					"name" = reagent.declent_ru(GENITIVE),
 					"volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING),
 					"pH" = reagent.ph,
 					"color" = reagent.color,
@@ -326,7 +326,7 @@
 		for(var/datum/reagent/reagent as anything in reagents.reagent_list)
 			beakerContents += list(list(
 				"ref" = "[reagent.type]",
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(GENITIVE),
 				"volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING),
 				"pH" = reagent.ph,
 				"color" = reagent.color,
@@ -506,9 +506,9 @@
 			var/item_name_default = initial(selected_container.name)
 			var/datum/reagent/master_reagent = reagents.get_master_reagent()
 			if(selected_container == default_container) // Tubes and bottles gain reagent name
-				item_name_default = "[master_reagent.name] [item_name_default]"
+				item_name_default = "[master_reagent.declent_ru(NOMINATIVE)] [item_name_default]"
 			if(!(initial(selected_container.reagent_flags) & OPENCONTAINER)) // Closed containers get both reagent name and units in the name
-				item_name_default = "[master_reagent.name] [item_name_default] ([volume_in_each]u)"
+				item_name_default = "[master_reagent.declent_ru(NOMINATIVE)] [item_name_default] ([volume_in_each]мл.)"
 			var/item_name = tgui_input_text(
 				usr,
 				"Container name",

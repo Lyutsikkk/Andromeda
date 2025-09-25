@@ -1,9 +1,9 @@
 /datum/reagent/blood
 	name = "Blood"
-	description  = "Blood cells suspended in plasma, the most abundant of which being the hemoglobin-containing red blood cells."
+	description  = "Кровяные клетки, взвешенные в плазме, наиболее многочисленными из которых являются содержащие гемоглобин красные кровяные клетки."
 	color = "#C80000" // rgb: 200, 0, 0
 	metabolization_rate = 12.5 * REAGENTS_METABOLISM //fast rate so it disappears fast.
-	taste_description = "iron"
+	taste_description = "железа"
 	taste_mult = 1.3
 	penetrates_skin = NONE
 	ph = 7.4
@@ -16,7 +16,7 @@
 /datum/glass_style/drinking_glass/blood
 	required_drink_type = /datum/reagent/blood
 	name = "glass of tomato juice"
-	desc = "Are you sure this is tomato juice?"
+	desc = "Ты уверен, что это томатный сок?"
 
 // FEED ME
 /datum/reagent/blood/on_hydroponics_apply(obj/machinery/hydroponics/mytray, mob/user)
@@ -45,7 +45,7 @@
 	var/blood_type = data?["blood_type"]
 	if(!blood_type)
 		return ..()
-	return list("[blood_type] type blood" = 1)
+	return list("Группа крови [blood_type]" = 1)
 
 /datum/reagent/consumable/liquidgibs
 	name = "Liquid Gibs"

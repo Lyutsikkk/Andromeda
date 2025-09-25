@@ -5,8 +5,6 @@ GLOBAL_LIST_EMPTY(ru_emote_names)
 GLOBAL_LIST_EMPTY(ru_emote_messages)
 GLOBAL_LIST_EMPTY(ru_reagent_descs)
 
-/// ADD ANDROMEDA-13: Система перевода на Русский
-
 /datum/modpack/translations
 	name = "Переводы"
 	desc = "Добавляет переводы"
@@ -54,14 +52,14 @@ GLOBAL_LIST_EMPTY(ru_reagent_descs)
 			emote_kb.update_to_ru()
 
 	// Описание реагентов
-	var/reagents_path = "[PATH_TO_TRANSLATE_DATA]/ru_reagents.toml"
-	if(fexists(file(reagents_path)))
-		var/list/reagents_toml_list = rustg_read_toml_file(reagents_path)
+//	var/reagents_path = "[PATH_TO_TRANSLATE_DATA]/ru_reagents.toml"
+//	if(fexists(file(reagents_path)))
+//		var/list/reagents_toml_list = rustg_read_toml_file(reagents_path)
 
-		var/list/reagent_descs = reagents_toml_list["reagents_desc"]
-		for(var/reagent_desc_key in reagent_descs)
-			GLOB.ru_reagent_descs += list("[reagent_desc_key]" = reagent_descs[reagent_desc_key])
+//		var/list/reagent_descs = reagents_toml_list["reagents_desc"]
+//		for(var/reagent_desc_key in reagent_descs)
+//			GLOB.ru_reagent_descs += list("[reagent_desc_key]" = reagent_descs[reagent_desc_key])
 
-		for(var/reagent_key as anything in GLOB.chemical_reagents_list)
-			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_key]
-			reagent.update_to_ru()
+//		for(var/reagent_key as anything in GLOB.chemical_reagents_list)
+//			var/datum/reagent/reagent = GLOB.chemical_reagents_list[reagent_key]
+//			reagent.update_to_ru()

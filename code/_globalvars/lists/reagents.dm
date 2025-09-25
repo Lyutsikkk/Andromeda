@@ -147,14 +147,14 @@ GLOBAL_LIST_INIT(plant_traits, init_plant_traits())
 			if(!istype(reagent))
 				stack_trace("Invalid reagent found in [reaction] required_reagents: [reagent_path]")
 				continue
-			reagents += list(list("name" = reagent.name, "id" = reagent.type))
+			reagents += list(list("name" = reagent.declent_ru(NOMINATIVE), "id" = reagent.type))
 
 		for(var/product in reaction.results)
 			var/datum/reagent/reagent = find_reagent_object_from_type(product)
 			if(!istype(reagent))
 				stack_trace("Invalid reagent found in [reaction] results: [product]")
 				continue
-			product_names += reagent.name
+			product_names += reagent.declent_ru(NOMINATIVE)
 			product_ids += product
 
 		var/product_name

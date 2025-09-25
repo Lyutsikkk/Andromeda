@@ -65,7 +65,7 @@
 	if(!(mutability_flags & PLANT_GENE_REMOVABLE))
 		formatted_name += "Fragile "
 	var/datum/reagent/reagent = reagent_id
-	formatted_name += "[reagent.name] production [rate*100]%"
+	formatted_name += "[reagent.declent_ru(NOMINATIVE)] production [rate*100]%"
 	return formatted_name
 
 /*
@@ -78,7 +78,7 @@
 
 	var/datum/reagent/found_reagent = GLOB.chemical_reagents_list[new_reagent_id]
 	if(found_reagent?.type == reagent_id)
-		name = found_reagent.name
+		name = found_reagent.declent_ru(NOMINATIVE)
 
 /datum/plant_gene/reagent/New(new_reagent_id, new_reagent_rate = 0.04)
 	. = ..()

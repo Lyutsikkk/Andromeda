@@ -333,8 +333,8 @@
 	for (var/datum/reagent/reagent as anything in reagent_list)
 		reagents_left--
 		if(final_and && intial_list_length > 1 && reagents_left == 0)
-			reagent_strings += "and [capitalize_names ? capitalize(reagent.name) : reagent.name][names_only ? null : ", [reagent.volume]"]"
+			reagent_strings += "и [capitalize_names ? capitalize(reagent.declent_ru(NOMINATIVE)) : reagent.declent_ru(NOMINATIVE)][names_only ? null : ", [reagent.volume]"]"
 		else
-			reagent_strings += "[capitalize_names ? capitalize(reagent.name) : reagent.name][names_only ? null : ", [reagent.volume]"]"
+			reagent_strings += "[capitalize_names ? capitalize(reagent.declent_ru(NOMINATIVE)) : reagent.declent_ru(NOMINATIVE)][names_only ? null : ", [reagent.volume]"]"
 
 	return reagent_strings.Join(join_text)

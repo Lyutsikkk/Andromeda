@@ -92,7 +92,7 @@
 	if(ascii_only)
 		if(length(text) > max_length)
 			return null
-		var/static/regex/non_ascii = regex(@"[^\x20-\x7E\t\n\u0400-\u04FF]") /// ADD ANDROMEDA-13: Кириллица (Old: var/static/regex/non_ascii = regex(@"[^\x20-\x7E\t\n]"))
+		var/static/regex/non_ascii = regex(@"[^\x20-\x7E\t\n\u0400-\u04FF]") /// ANDROMEDA EDITED - Кириллица (Old: var/static/regex/non_ascii = regex(@"[^\x20-\x7E\t\n]"))
 		if(non_ascii.Find(text))
 			return null
 	else if(length_char(text) > max_length)
@@ -178,12 +178,12 @@
 		switch(text2ascii(char))
 
 			// A  .. Z
-			if(65 to 90, 1040 to 1071, 1025) //Uppercase Letters /// ADD ANDROMEDA-13: Кириллица (Old: if(65 to 90) //Uppercase Letters)
+			if(65 to 90, 1040 to 1071, 1025) //Uppercase Letters /// ANDROMEDA EDITED - Кириллица (Old: if(65 to 90) //Uppercase Letters)
 				number_of_alphanumeric++
 				last_char_group = LETTERS_DETECTED
 
 			// a  .. z
-			if(97 to 122, 1072 to 1103, 1105) //Lowercase Letters /// ADD ANDROMEDA-13: Кириллица (Old: if(97 to 122) //Lowercase Letters)
+			if(97 to 122, 1072 to 1103, 1105) //Lowercase Letters /// ANDROMEDA EDITED - Кириллица (Old: if(97 to 122) //Lowercase Letters)
 				if(last_char_group == NO_CHARS_DETECTED || last_char_group == SPACES_DETECTED || cap_after_symbols && last_char_group == SYMBOLS_DETECTED) //start of a word
 					char = uppertext(char)
 				number_of_alphanumeric++
@@ -221,7 +221,7 @@
 					continue
 				last_char_group = SPACES_DETECTED
 
-			if(127 to 1024, 1026 to 1104, 1106 to INFINITY) /// ADD ANDROMEDA-13: Кириллица (Old: if(127 to INFINITY))
+			if(127 to 1024, 1026 to 1104, 1106 to INFINITY) /// ANDROMEDA EDITED - Кириллица (Old: if(127 to INFINITY))
 				if(ascii_only)
 					if(strict)
 						return
@@ -1204,7 +1204,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 
 /// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
 /proc/sanitize_css_class_name(name)
-	var/static/regex/regex = new(@"[^a-zA-Z0-9а-яА-ЯёЁ]","g") /// ADD ANDROMEDA-13: Кириллица (Old: var/static/regex/regex = new(@"[^a-zA-Z0-9]","g"))
+	var/static/regex/regex = new(@"[^a-zA-Z0-9а-яА-ЯёЁ]","g") /// ANDROMEDA EDITED - Кириллица (Old: var/static/regex/regex = new(@"[^a-zA-Z0-9]","g"))
 	return replacetext(name, regex, "")
 
 /// Converts a semver string into a list of numbers

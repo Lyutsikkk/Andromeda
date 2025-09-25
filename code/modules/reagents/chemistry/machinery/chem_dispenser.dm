@@ -224,7 +224,7 @@
 	for(var/re in dispensable_reagents)
 		var/datum/reagent/temp = GLOB.chemical_reagents_list[re]
 		if(temp)
-			var/chemname = temp.name
+			var/chemname = temp.declent_ru(NOMINATIVE)
 			var/chemcolor = temp.color
 			if(is_hallucinating && prob(5))
 				chemname = "[pick_list_replacements("hallucination.json", "chemicals")]"
@@ -239,7 +239,7 @@
 		var/datum/chemical_reaction/reaction = get_chemical_reaction(beaker.reagents.ui_reaction_id)
 		for(var/_reagent in reaction.required_reagents)
 			var/datum/reagent/reagent = find_reagent_object_from_type(_reagent)
-			.["recipeReagents"] += reagent.name
+			.["recipeReagents"] += reagent.declent_ru(NOMINATIVE)
 
 	var/list/beaker_data = null
 	if(!QDELETED(beaker))
@@ -251,7 +251,7 @@
 		var/list/beakerContents = list()
 		if(length(beaker.reagents.reagent_list))
 			for(var/datum/reagent/reagent as anything in beaker.reagents.reagent_list)
-				beakerContents += list(list("name" = reagent.name, "volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING))) // list in a list because Byond merges the first list...
+				beakerContents += list(list("name" = reagent.declent_ru(NOMINATIVE), "volume" = round(reagent.volume, CHEMICAL_VOLUME_ROUNDING))) // list in a list because Byond merges the first list...
 		beaker_data["contents"] = beakerContents
 	.["beaker"] = beaker_data
 

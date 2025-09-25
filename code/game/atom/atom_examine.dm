@@ -37,7 +37,7 @@
 					. += "Имеется <b>[reagents.total_volume]</b> мл. различных химикатов[user_sees_reagents ? ":" : "."]"
 					if(user_sees_reagents || (reagent_sigreturn & ALLOW_GENERIC_REAGENT_EXAMINE)) //Show each individual reagent for detailed examination
 						for(var/datum/reagent/current_reagent as anything in reagents.reagent_list)
-							. += "&bull; [round(current_reagent.volume, CHEMICAL_VOLUME_ROUNDING)] мл [current_reagent.name]"
+							. += "&bull; [round(current_reagent.volume, CHEMICAL_VOLUME_ROUNDING)] мл. [current_reagent.declent_ru(GENITIVE)]"
 						if(reagents.is_reacting)
 							. += span_warning("Оно сейчас вступает в реакцию!")
 						. += span_notice("pH раствора равен [round(reagents.ph, 0.01)] и имеет температуру в [reagents.chem_temp]K.")

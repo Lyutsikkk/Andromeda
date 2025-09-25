@@ -110,7 +110,7 @@
 		if(reagent.overdose_threshold && reagent.volume >= reagent.overdose_threshold && !reagent.overdosed)
 			reagent.overdosed = TRUE
 			need_mob_update += reagent.overdose_start(owner)
-			owner.log_message("has started overdosing on [reagent.name] at [reagent.volume] units.", LOG_GAME)
+			owner.log_message("has started overdosing on [reagent.declent_ru(NOMINATIVE)] at [reagent.volume] units.", LOG_GAME)
 
 		for(var/addiction in reagent.addiction_types)
 			owner.mind?.add_addiction_points(addiction, reagent.addiction_types[addiction] * REAGENTS_METABOLISM)
@@ -173,7 +173,7 @@
 		var/added_amount = add_reagent(reagent.inverse_chem, added_volume, FALSE, added_purity = reagent.get_inverse_purity(reagent.creation_purity), reagent_added = reagent_datum)
 		var/datum/reagent/inverse_reagent = reagent_datum[reagent_datum.len]
 		if(inverse_reagent.chemical_flags & REAGENT_SNEAKYNAME)
-			inverse_reagent.name = reagent.name //Negative effects are hidden
+			inverse_reagent.name = reagent.declent_ru(NOMINATIVE) //Negative effects are hidden
 		return added_amount * -1
 
 	//reagent did not split because purity was above inverse value

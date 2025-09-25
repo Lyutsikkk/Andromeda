@@ -200,7 +200,7 @@
 		seed_data["reagents"] = list()
 		for(var/datum/plant_gene/reagent/reagent in to_add.genes)
 			seed_data["reagents"] += list(list(
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(NOMINATIVE),
 				"rate" = reagent.rate
 			))
 		var/datum/plant_gene/trait/maxchem/volume_trait = locate(/datum/plant_gene/trait/maxchem) in to_add.genes

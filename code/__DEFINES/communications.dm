@@ -12,12 +12,12 @@
 /// Уровень безопасности красный.
 #define SEC_LEVEL_RED 2
 
-/// ADD ANDROMEDA
+/// ANDROMEDA ADDITION START
 /// Уровень безопасности гамма.
 #define SEC_LEVEL_GAMMA 3
 /// Уровень безопасности эпсилон.
 #define SEC_LEVEL_EPSILON 4
-/// END ANDROMEDA
+/// ANDROMEDA ADDITION END
 
 /// Уровень безопасности дельта.
 #define SEC_LEVEL_DELTA 5

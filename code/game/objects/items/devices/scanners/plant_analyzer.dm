@@ -241,7 +241,7 @@
 		)
 		for(var/datum/reagent/reagent as anything in tray.reagents.reagent_list)
 			last_scan_data["tray_data"]["reagents"] += list(list(
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(NOMINATIVE),
 				"volume" = round(reagent.volume, CHEMICAL_QUANTISATION_LEVEL),
 				"color" = reagent.color,
 			))
@@ -255,7 +255,7 @@
 		)
 		for(var/datum/reagent/reagent as anything in target.reagents.reagent_list)
 			last_scan_data["plant_data"]["reagents"] += list(list(
-				"name" = reagent.name,
+				"name" = reagent.declent_ru(NOMINATIVE),
 				"volume" = round(reagent.volume, CHEMICAL_QUANTISATION_LEVEL),
 				"color" = reagent.color,
 			))
@@ -308,7 +308,7 @@
 	seed_data["reagents"] = list()
 	for(var/datum/plant_gene/reagent/reagent in seed.genes)
 		seed_data["reagents"] += list(list(
-			"name" = reagent.name,
+			"name" = reagent.declent_ru(NOMINATIVE),
 			"rate" = reagent.rate
 		))
 	var/datum/plant_gene/trait/maxchem/volume_trait = locate(/datum/plant_gene/trait/maxchem) in seed.genes

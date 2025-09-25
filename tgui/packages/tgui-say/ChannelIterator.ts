@@ -2,10 +2,10 @@ export type Channel =
   | 'Say'
   | 'Radio'
   | 'Me'
-  // ADD ANDROMEDA
+  // ANDROMEDA ADDITION START
   | 'Whis'
   | 'LOOC'
-  //
+  // ANDROMEDA ADDITION END
   | 'OOC'
   | 'Admin';
 
@@ -21,15 +21,15 @@ export class ChannelIterator {
     'Say',
     'Radio',
     'Me',
-    // ADD ANDROMEDA
+    // ANDROMEDA ADDITION START
     'Whis',
     'LOOC',
-    // END ANDROMEDA
+    // ANDROMEDA ADDITION END
     'OOC',
     'Admin',
   ];
   private readonly blacklist: Channel[] = ['Admin'];
-  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin']; // ADD ANDROMEDA
+  private readonly quiet: Channel[] = ['OOC', 'LOOC', 'Admin']; // ANDROMEDA EDITED
 
   public next(): Channel {
     if (this.blacklist.includes(this.channels[this.index])) {

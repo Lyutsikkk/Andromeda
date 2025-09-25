@@ -131,7 +131,7 @@
 		. += "The apparatus currently has [reagent_container] secured, which contains:"
 		if(length(reagent_container.reagents.reagent_list))
 			for(var/datum/reagent/reagent in reagent_container.reagents.reagent_list)
-				. += "[reagent.volume] units of [reagent.name]"
+				. += "[reagent.volume] мл. [reagent.declent_ru(NOMINATIVE)]"
 		else
 			. += "Nothing."
 

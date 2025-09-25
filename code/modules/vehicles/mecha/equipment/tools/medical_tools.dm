@@ -19,7 +19,7 @@
 	var/list/contained_reagents = list()
 	if(length(reagent_list))
 		for(var/datum/reagent/reagent as anything in reagent_list)
-			contained_reagents += list(list("name" = reagent.name, "volume" = round(reagent.volume, 0.01))) // list in a list because Byond merges the first list...
+			contained_reagents += list(list("name" = reagent.declent_ru(NOMINATIVE), "volume" = round(reagent.volume, 0.01))) // list in a list because Byond merges the first list...
 	return contained_reagents
 
 //---- Mecha sleeper, medical subtype has the chemical functionality

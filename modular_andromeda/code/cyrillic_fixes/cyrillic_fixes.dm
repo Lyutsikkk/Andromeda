@@ -1,4 +1,3 @@
-/// ADD ANDROMEDA-13: Кириллица
 /datum/modpack/cyrillic_fixes
 	name = "Поддержка кириллицы"
 	desc = "Добавляет поддержку кириллицы."
