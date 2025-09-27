@@ -20,7 +20,7 @@
 	symptom_delay_min = 18
 	symptom_delay_max = 36
 
-	var/list/beard_order = list("Beard (Jensen)", "Beard (Full)", "Beard (Dwarf)", "Beard (Very Long)")
+	var/list/beard_order = list("Борода (Дженсен)", "Борода (Полная)", "Борода (Дварф)", "Борода (Очень длинная)")
 
 /datum/symptom/beard/Activate(datum/disease/advance/disease)
 	. = ..()

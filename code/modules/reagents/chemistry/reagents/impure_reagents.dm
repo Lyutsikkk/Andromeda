@@ -5,7 +5,7 @@
 //Causes slight liver damage, and that's it.
 /datum/reagent/impurity
 	name = "Chemical Isomers"
-	description = "Impure chemical isomers made from suboptimal reactions. Causes mild liver damage"
+	description = "Нечистые химические изомеры, полученные в результате неоптимальных реакций. Вызывают лёгкое повреждение печени"
 	//by default, it will stay hidden on splitting, but take the name of the source on inverting. Cannot be fractioned down either if the reagent is somehow isolated.
 	chemical_flags = REAGENT_SNEAKYNAME | REAGENT_CAN_BE_SYNTHESIZED //impure can be synthed, and is one of the only ways to get almost pure impure
 	ph = 3
@@ -30,7 +30,7 @@
 //Basically just so people don't forget to adjust metabolization_rate
 /datum/reagent/inverse
 	name = "Toxic Monomers"
-	description = "Inverse reagents are created when a reagent's purity is below it's inverse threshold. The are created either during ingestion - which will then replace their associated reagent, or some can be created during the reaction process."
+	description = "Обратные реагенты создаются, когда чистота реагента ниже его порога инверсии. Они создаются либо при попадании внутрь - и затем заменяют связанный с ними реагент, либо некоторые могут создаваться в процессе реакции."
 	ph = 2
 	chemical_flags = REAGENT_SNEAKYNAME //Inverse generally cannot be synthed - they're difficult to get
 	//Mostly to be safe - but above flags will take care of this. Also prevents it from showing these on reagent lookups in the ui
@@ -48,11 +48,11 @@
 //technically not a impure chem, but it's here because it can only be made with a failed impure reaction
 /datum/reagent/consumable/failed_reaction
 	name = "Viscous Sludge"
-	description = "A off smelling sludge that's created when a reaction gets too impure."
+	description = "Дурно пахнущий шлам, который образуется, когда реакция становится слишком нечистой."
 	nutriment_factor = -1
 	quality = -1
 	ph = 1.5
-	taste_description = "an awful, strongly chemical taste"
+	taste_description = "ужасный, сильно химический привкус"
 	color = "#270d03"
 	glass_price = DRINK_PRICE_HIGH
 	fallback_icon = 'icons/obj/drinks/drink_effects.dmi'
@@ -62,7 +62,7 @@
 
 /datum/reagent/inverse/eigenswap
 	name = "Eigenswap"
-	description = "This reagent is known to swap the handedness of a patient."
+	description = "Известно, что этот реагент меняет хиральность пациента."
 	ph = 3.3
 	chemical_flags = NONE
 	tox_damage = 0
@@ -90,9 +90,9 @@
 
 /datum/reagent/inverse/cryostylane
 	name = "Cryogelidia"
-	description = "Freezes the live or dead patient in a cryostasis ice block. Won't work if you drink it."
+	description = "Замораживает живого или мёртвого пациента в блоке криостаза. Не сработает, если выпить его."
 	color = "#03dbfc"
-	taste_description = "your tongue freezing, shortly followed by your thoughts. Brr!"
+	taste_description = "замерзание вашего языка, вскоре followed вашими мыслями. Брр!"
 	ph = 14
 	chemical_flags = REAGENT_DEAD_PROCESS | REAGENT_IGNORE_STASIS | REAGENT_UNAFFECTED_BY_METABOLISM
 	metabolization_rate = 1 * REM

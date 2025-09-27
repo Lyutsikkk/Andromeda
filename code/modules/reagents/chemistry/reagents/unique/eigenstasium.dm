@@ -11,8 +11,8 @@
 */
 /datum/reagent/eigenstate
 	name = "Eigenstasium"
-	description = "A strange mixture formed from a controlled reaction of bluespace with plasma, that causes localised eigenstate fluctuations within the patient"
-	taste_description = "wiggly cosmic dust."
+	description = "Странная смесь, образовавшаяся в результате контролируемой реакции блюспейса с плазмой, которая вызывает локализованные флуктуации собственного состояния у пациента"
+	taste_description = "извилистая космическая пыль."
 	color = "#5020F4"
 	overdose_threshold = 15
 	metabolization_rate = 1 * REAGENTS_METABOLISM
@@ -62,11 +62,11 @@
 	eigenstate.mouse_opacity = MOUSE_OPACITY_TRANSPARENT//So you can't click on it.
 	eigenstate.layer = FLY_LAYER//Above all the other objects/mobs. Or the vast majority of them.
 	eigenstate.set_anchored(TRUE) //So space wind cannot drag it.
-	eigenstate.name = "[living_mob.name]'s Eigenstate"//If someone decides to right click.
+	eigenstate.name = "Эйгенсостояние [living_mob.name]"//If someone decides to right click.
 	eigenstate.set_light(2)	//hologram lighting
 
 	location_return = get_turf(living_mob)	//sets up return point
-	to_chat(living_mob, span_userdanger("You feel like part of yourself has split off!"))
+	to_chat(living_mob, span_userdanger("Вы чувствуете, что часть вас отделилась!"))
 
 	//Teleports you home if it's pure enough
 	if(creation_purity > 0.9 && location_created && data["ingested"])
@@ -84,7 +84,7 @@
 /datum/reagent/eigenstate/on_mob_delete(mob/living/living_mob) //returns back to original location
 	. = ..()
 	do_sparks(5,FALSE,living_mob)
-	to_chat(living_mob, span_userdanger("You feel strangely whole again."))
+	to_chat(living_mob, span_userdanger("Вы чувствуете себя странно цельным снова."))
 	if(!living_mob.reagents.has_reagent(/datum/reagent/stabilizing_agent))
 		do_teleport(living_mob, location_return, 0, asoundin = 'sound/effects/phasein.ogg') //Teleports home
 		do_sparks(5,FALSE,living_mob)
@@ -92,7 +92,7 @@
 
 /datum/reagent/eigenstate/overdose_start(mob/living/living_mob) //Overdose, makes you teleport randomly
 	. = ..()
-	to_chat(living_mob, span_userdanger("You feel like your perspective is being ripped apart as you begin flitting in and out of reality!"))
+	to_chat(living_mob, span_userdanger("Вы чувствуете, как ваше восприятие разрывается на части, пока вы начинаете мелькать внутри и вне реальности!"))
 	living_mob.set_jitter_if_lower(40 SECONDS)
 	metabolization_rate += 0.5 //So you're not stuck forever teleporting.
 	if(iscarbon(living_mob))

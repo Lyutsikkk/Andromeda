@@ -1,6 +1,6 @@
 ///These alter reaction conditions while they're in the beaker
 /datum/reagent/catalyst_agent
-	name ="Catalyst agent"
+	name = "Catalyst agent"
 	///The typepath of the reagent they that they affect
 	var/target_reagent_type
 	///The minimumvolume required in the beaker for them to have an effect
@@ -15,7 +15,7 @@
 	return FALSE
 
 /datum/reagent/catalyst_agent/speed
-	name ="Speed Catalyst Agent"
+	name = "Speed Catalyst Agent"
 
 /datum/reagent/catalyst_agent/speed/consider_catalyst(datum/equilibrium/equilibrium)
 	. = ..()
@@ -24,7 +24,7 @@
 		equilibrium.time_deficit += (creation_purity)*(0.05 * modifier) //give the reaction a little boost too (40% faster)
 
 /datum/reagent/catalyst_agent/ph
-	name ="pH Catalyst Agent"
+	name = "pH Catalyst Agent"
 
 /datum/reagent/catalyst_agent/ph/consider_catalyst(datum/equilibrium/equilibrium)
 	. = ..()
@@ -37,19 +37,19 @@
 /datum/reagent/catalyst_agent/temperature/consider_catalyst(datum/equilibrium/equilibrium)
 	. = ..()
 	if(.)
-		equilibrium.thermic_mod = ((creation_purity-0.5)*2)*modifier //So a purity 1 = the modifier, and a purity 0 = the inverse modifier 
+		equilibrium.thermic_mod = ((creation_purity-0.5)*2)*modifier //So a purity 1 = the modifier, and a purity 0 = the inverse modifier
 ///Note from confused guy: It looks like this makes endothermic reactions suddenly become violently exothermic and visa versa at low purities. Wacky.
 
 ///Catalyst precursors (oh boy here i go competing again). P is the harder one to make, (ie. requires a good heater or some extra materials), because it is probably more useful
 /datum/reagent/catalyst_precursor_ph
 	name = "Catalysium P"
-	description = "A close chemical relative of the prefactors, this reagent is a precursor to Ionic Modulator, and will react with stable plasma to create it."
+	description = "Близкий химический родственник префакторов, этот реагент является предшественником Ионного Модулятора и будет реагировать со стабильной плазмой для его создания."
 	color = "#bafa69"
 	ph = 7
 
 /datum/reagent/catalyst_precursor_temp
 	name = "Catalysium T"
-	description = "A close chemical relative of the prefactors, this reagent is a precursor to Thermic Modulator, and will react with stable plasma to create it."
+	description = "Близкий химический родственник префакторов, этот реагент является предшественником Термического Модулятора и будет реагировать со стабильной плазмой для его создания."
 	color = "#c91a1a"
 	ph = 7
 
@@ -60,7 +60,7 @@
 	name = "Ionic Modulator"
 	target_reagent_type = /datum/reagent
 	modifier = 0.5
-	description = "This catalyst reagent will stabilize reactions in its beaker, reducing the changes in pH caused by reacting chemicals."
+	description = "Этот каталитический реагент стабилизирует реакции в колбе, уменьшая изменения pH, вызванные реагирующими химикатами."
 	ph = 7 //perfectly balanced, as all things should be. (also it's a ph moderator so this makes sense)
 	color = "#84e30b" //green = neutrality on a ph strip so a neutrality enforcing chem is bright green. logic.
 
@@ -68,7 +68,7 @@
 	name = "Thermic Modulator"
 	target_reagent_type = /datum/reagent
 	modifier = 0.5
-	description = "This catalyst reagent will stabilize reactions in its beaker, reducing their endo/exo-thermicity."
+	description = "Этот каталитический реагент стабилизирует реакции в колбе, уменьшая их эндо-/экзотермичность."
 	ph = 7 //perfectly balanced, as all things should be. (also it's a nonreactive catalyst so this makes sense)
 	color = "#84e30b"
 
@@ -78,7 +78,7 @@
 ///These affect medicines
 /datum/reagent/catalyst_agent/speed/medicine
 	name = "Palladium Synthate Catalyst"
-	description = "This catalyst reagent will speed up all medicine reactions that it shares a beaker with by a dramatic amount."
+	description = "Этот каталитический реагент значительно ускорит все лекарственные реакции в колбе, в которой он находится."
 	target_reagent_type = /datum/reagent/medicine
 	modifier = 2
 	ph = 2 //drift towards acidity

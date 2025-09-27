@@ -1,9 +1,9 @@
 /datum/reagent/freon
 	name = "Freon"
-	description = "A powerful heat absorbent."
-	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because nitrium/freon/hypernoblium are handled through gas breathing, metabolism must be lower for breathcode to keep up
+	description = "Мощный поглотитель тепла."
+	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Поскольку нитрий/фреон/гиперноблий обрабатываются через дыхание газом, метаболизм должен быть ниже, чтобы breathcode успевал
 	color = "90560B"
-	taste_description = "burning"
+	taste_description = "жжение"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 
 /datum/reagent/freon/on_mob_metabolize(mob/living/breather)
@@ -16,10 +16,10 @@
 
 /datum/reagent/halon
 	name = "Halon"
-	description = "A fire suppression gas that removes oxygen and cools down the area"
+	description = "Огнетушащий газ, который удаляет кислород и охлаждает область"
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	color = "90560B"
-	taste_description = "minty"
+	taste_description = "мятный"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 	metabolized_traits = list(TRAIT_RESISTHEAT)
 
@@ -33,10 +33,10 @@
 
 /datum/reagent/healium
 	name = "Healium"
-	description = "A powerful sleeping agent with healing properties"
+	description = "Мощное снотворное средство с целебными свойствами"
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	color = "90560B"
-	taste_description = "rubbery"
+	taste_description = "резина"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 
 /datum/reagent/healium/on_mob_end_metabolize(mob/living/breather)
@@ -55,10 +55,10 @@
 
 /datum/reagent/hypernoblium
 	name = "Hyper-Noblium"
-	description = "A suppressive gas that stops gas reactions on those who inhale it."
-	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because nitrium/freon/hyper-nob are handled through gas breathing, metabolism must be lower for breathcode to keep up
+	description = "Подавляющий газ, который останавливает газовые реакции у тех, кто его вдыхает."
+	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Поскольку нитрий/фреон/гипер-ноблий обрабатываются через дыхание газом, метаболизм должен быть ниже, чтобы breathcode успевал
 	color = "90560B"
-	taste_description = "searingly cold"
+	taste_description = "обжигающе холодный"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 
 /datum/reagent/hypernoblium/on_mob_life(mob/living/carbon/breather, seconds_per_tick, times_fired)
@@ -68,10 +68,10 @@
 
 /datum/reagent/nitrium_high_metabolization
 	name = "Nitrosyl plasmide"
-	description = "A highly reactive byproduct that stops you from sleeping, while dealing increasing toxin damage over time."
-	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because nitrium/freon/hypernoblium are handled through gas breathing, metabolism must be lower for breathcode to keep up
+	description = "Высокореактивный побочный продукт, который мешает вам спать, одновременно нанося увеличивающийся урон токсинами со временем."
+	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Поскольку нитрий/фреон/гиперноблий обрабатываются через дыхание газом, метаболизм должен быть ниже, чтобы breathcode успевал
 	color = "E1A116"
-	taste_description = "sourness"
+	taste_description = "кислота"
 	ph = 1.8
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 	addiction_types = list(/datum/addiction/stimulants = 14)
@@ -87,10 +87,10 @@
 
 /datum/reagent/nitrium_low_metabolization
 	name = "Nitrium"
-	description = "A highly reactive gas that makes you feel faster."
-	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Because nitrium/freon/hypernoblium are handled through gas breathing, metabolism must be lower for breathcode to keep up
+	description = "Высокореактивный газ, который заставляет вас чувствовать себя быстрее."
+	metabolization_rate = REAGENTS_METABOLISM * 0.5 // Поскольку нитрий/фреон/гиперноблий обрабатываются через дыхание газом, метаболизм должен быть ниже, чтобы breathcode успевал
 	color = "90560B"
-	taste_description = "burning"
+	taste_description = "жжение"
 	ph = 2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 
@@ -104,10 +104,10 @@
 
 /datum/reagent/pluoxium
 	name = "Pluoxium"
-	description = "A gas that is eight times more efficient than O2 at lung diffusion with organ healing properties on sleeping patients."
+	description = "Газ, который в восемь раз эффективнее O2 в диффузии в лёгких, с целебными свойствами для органов у спящих пациентов."
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	color = COLOR_GRAY
-	taste_description = "irradiated air"
+	taste_description = "облучённый воздух"
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED|REAGENT_NO_RANDOM_RECIPE
 
 /datum/reagent/pluoxium/on_mob_life(mob/living/carbon/breather, seconds_per_tick, times_fired)
@@ -124,10 +124,10 @@
 
 /datum/reagent/zauker
 	name = "Zauker"
-	description = "An unstable gas that is toxic to all living beings."
+	description = "Нестабильный газ, ядовитый для всех живых существ."
 	metabolization_rate = REAGENTS_METABOLISM * 0.5
 	color = "90560B"
-	taste_description = "bitter"
+	taste_description = "горечь"
 	chemical_flags = REAGENT_NO_RANDOM_RECIPE
 	affected_biotype = MOB_ORGANIC | MOB_MINERAL | MOB_PLANT // "toxic to all living beings"
 	affected_respiration_type = ALL

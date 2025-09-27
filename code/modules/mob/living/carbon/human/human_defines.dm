@@ -18,7 +18,7 @@
 
 	//Hair colour and style
 	var/hair_color = COLOR_BLACK
-	var/hairstyle = "Bald"
+	var/hairstyle = "Лысый"
 
 	///Colours used for hair and facial hair gradients.
 	var/list/grad_color = list(
@@ -27,13 +27,13 @@
 	)
 	///Styles used for hair and facial hair gradients.
 	var/list/grad_style = list(
-		"None",	//Hair Gradient Style
-		"None",	//Facial Hair Gradient Style
+		"Ничего",	//Hair Gradient Style
+		"Ничего",	//Facial Hair Gradient Style
 	)
 
 	//Facial hair colour and style
 	var/facial_hair_color = COLOR_BLACK
-	var/facial_hairstyle = "Shaved"
+	var/facial_hairstyle = "Выбритые"
 
 	// Base "natural" eye color
 	var/eye_color_left = COLOR_BLACK
@@ -55,10 +55,10 @@
 	var/physique = MALE
 
 	//consider updating /mob/living/carbon/human/copy_clothing_prefs() if adding more of these
-	var/underwear = "Nude" //Which underwear the player wants
+	var/underwear = "Ничего" //Which underwear the player wants
 	var/underwear_color = COLOR_BLACK
-	var/undershirt = "Nude" //Which undershirt the player wants
-	var/socks = "Nude" //Which socks the player wants
+	var/undershirt = "Ничего" //Which undershirt the player wants
+	var/socks = "Ничего" //Which socks the player wants
 	var/backpack = DBACKPACK //Which backpack type the player has chosen.
 	var/jumpsuit_style = PREF_SUIT //suit/skirt
 

@@ -13,9 +13,9 @@
 
 /datum/reagent/medicine/c2/helbital //kinda a C2 only if you're not in hardcrit.
 	name = "Helbital"
-	description = "Named after the Norse goddess Hel, this medicine heals the patient's bruises the closer they are to death. Patients will find the medicine 'aids' their healing if not near death by causing asphyxiation."
+	description = "Названный в честь норвежской богини Хель, это лекарство исцеляет ушибы пациента тем сильнее, чем ближе он к смерти. Пациенты обнаружат, что лекарство 'помогает' их исцелению, если они не при смерти, вызывая асфиксию."
 	color = "#9400D3"
-	taste_description = "cold and lifeless"
+	taste_description = "холод и безжизненность"
 	ph = 8
 	overdose_threshold = 35
 	inverse_chem_val = 0.3
@@ -45,36 +45,36 @@
 	if(need_mob_update)
 		. = UPDATE_MOB_HEALTH
 
-	if(good_kind_of_healing && !reaping && SPT_PROB(0.005, seconds_per_tick)) //janken with the grim reaper!
+	if(good_kind_of_healing && !reaping && SPT_PROB(0.005, seconds_per_tick)) //камень-ножницы-бумага с жнецом!
 		notify_ghosts(
-			"[affected_mob.real_name] has entered a game of rock-paper-scissors with death!",
+			"[affected_mob.real_name] вступил в игру 'Камень-ножницы-бумага' со Смертью!",
 			source = affected_mob,
-			header = "Who Will Win?",
+			header = "Кто Победит?",
 		)
 		reaping = TRUE
 		if(affected_mob.apply_status_effect(/datum/status_effect/necropolis_curse, CURSE_BLINDING))
 			helbent = TRUE
-		to_chat(affected_mob, span_hierophant("Malevolent spirits appear before you, bartering your life in a 'friendly' game of rock, paper, scissors. Which do you choose?"))
+		to_chat(affected_mob, span_hierophant("Перед вами является Смерть и предлагает сыграть в 'дружеской' игре 'Камень, ножницы, бумага'. Но игра на вашу жизнь. Что вы выбираете?"))
 		var/timeisticking = world.time
-		var/RPSchoice = tgui_alert(affected_mob, "Janken Time! You have 60 Seconds to Choose!", "Rock Paper Scissors", list("rock" , "paper" , "scissors"), 60)
+		var/RPSchoice = tgui_alert(affected_mob, "Время вашей самой важной игры, у вас 60 секунд.", "Камень Ножницы Бумага", list("камень" , "ножницы" , "бумага"), 60)
 		if(QDELETED(affected_mob) || (timeisticking+(1.1 MINUTES) < world.time))
 			reaping = FALSE
-			return //good job, you ruined it
+			return //отличная работа, вы всё испортили
 		if(!RPSchoice)
-			to_chat(affected_mob, span_hierophant("You decide to not press your luck, but the spirits remain... hopefully they'll go away soon."))
+			to_chat(affected_mob, span_hierophant("Вы решаете не испытывать удачу, но Смерть остаётся... И будет ждать вашего исхода."))
 			reaping = FALSE
 			return
 		switch(rand(1,3))
-			if(1) //You Tied!
-				to_chat(affected_mob, span_hierophant("You tie, and the malevolent spirits disappear... for now."))
+			if(1) //Ничья!
+				to_chat(affected_mob, span_hierophant("Ничья, Смерть исчезает... Рано или поздно, она всё равно придёт за вами."))
 				reaping = FALSE
-			if(2) //You lost!
-				to_chat(affected_mob, span_hierophant("You lose, and the malevolent spirits smirk eerily as they surround your body."))
-				affected_mob.investigate_log("has lost rock paper scissors with the grim reaper and been dusted.", INVESTIGATE_DEATHS)
+			if(2) //Вы проиграли!
+				to_chat(affected_mob, span_hierophant("Вы проигрываете и Смерть протягивает свои руки к вам, окружая вас в своих холодных объятьях."))
+				affected_mob.investigate_log("проиграл в камень-ножницы-бумага со Смертью и был обращен в пыль.", INVESTIGATE_DEATHS)
 				affected_mob.dust()
 				return
-			if(3) //VICTORY ROYALE
-				to_chat(affected_mob, span_hierophant("You win, and the malevolent spirits fade away as well as your wounds."))
+			if(3) //КОРОЛЕВСКАЯ ПОБЕДА
+				to_chat(affected_mob, span_hierophant("Вы выигрываете, Смерть исчезает и исцеляет ваши раны."))
 				affected_mob.client.give_award(/datum/award/achievement/jobs/helbitaljanken, affected_mob)
 				affected_mob.revive(HEAL_ALL & ~HEAL_REFRESH_ORGANS)
 				holder.del_reagent(type)
@@ -95,14 +95,14 @@
 	. = ..()
 	if(current_cycle >= 50) //greater than 10u in the system
 		affected_mob.AddComponent(/datum/component/omen, incidents_left = min(round(current_cycle/51), 3)) //no more than 3 bad incidents for dropping more than 10u
-		to_chat(affected_mob, span_hierophant_warning("You feel a sense of heavy dread and grave misfortune settle in as the substance leaves your body."))
+		to_chat(affected_mob, span_hierophant_warning("Вы чувствуете, как по мере выхода вещества из вашего тела, вас охватывает чувство тяжёлого страха и роковой неудачи."))
 
 /datum/reagent/medicine/c2/libital //messes with your liber
 	name = "Libital"
-	description = "A bruise reliever. Does minor liver damage."
+	description = "Средство от ушибов. Наносит незначительный урон печени."
 	color = "#ECEC8D" // rgb: 236 236 141
 	ph = 8.2
-	taste_description = "bitter with a hint of alcohol"
+	taste_description = "горький с примесью алкоголя"
 	inverse_chem_val = 0.3
 	inverse_chem = /datum/reagent/inverse/libitoil
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -117,7 +117,7 @@
 
 /datum/reagent/medicine/c2/probital
 	name = "Probital"
-	description = "Originally developed as a prototype gym supplement for those looking for quick workout turnover, this oral medication quickly repairs broken muscle tissue but causes lactic acid buildup, tiring the patient. Overdosing can cause extreme drowsiness. An influx of nutrients promotes the muscle repair even further."
+	description = "Изначально разработанный как прототип добавки для спортзала для тех, кто ищет быстрый оборот тренировок, этот пероральный препарат быстро восстанавливает повреждённую мышечную ткань, но вызывает накопление молочной кислоты, утомляя пациента. Передозировка может вызвать крайнюю сонливость. Приток питательных веществ дополнительно способствует восстановлению мышц."
 	color = "#FFFF6B"
 	ph = 5.5
 	overdose_threshold = 20
@@ -148,7 +148,7 @@
 	if(affected_mob.getStaminaLoss() >= 80)
 		affected_mob.adjust_drowsiness(2 SECONDS * REM * seconds_per_tick)
 	if(affected_mob.getStaminaLoss() >= 100)
-		to_chat(affected_mob,span_warning("You feel more tired than you usually do, perhaps if you rest your eyes for a bit..."))
+		to_chat(affected_mob,span_warning("Вы чувствуете себя более уставшим, чем обычно, возможно, если вы немного отдохнёте..."))
 		need_mob_update += affected_mob.adjustStaminaLoss(-100, updating_stamina = FALSE) // Don't add the biotype parameter here as it results in infinite sleep and chat spam.
 		affected_mob.Sleeping(10 SECONDS)
 	if(need_mob_update)
@@ -167,7 +167,7 @@
 /*Suffix: -uri*/
 /datum/reagent/medicine/c2/lenturi
 	name = "Lenturi"
-	description = "Used to treat burns. Applies stomach damage when it leaves your system."
+	description = "Используется для лечения ожогов. Наносит урон желудку при выходе из организма."
 	color = "#6171FF"
 	ph = 4.7
 	var/resetting_probability = 0 //What are these for?? Can I remove them?
@@ -186,7 +186,7 @@
 
 /datum/reagent/medicine/c2/aiuri
 	name = "Aiuri"
-	description = "Used to treat burns. Does minor eye damage."
+	description = "Используется для лечения ожогов. Наносит незначительный урон глазам."
 	color = "#8C93FF"
 	ph = 4
 	var/resetting_probability = 0 //same with this? Old legacy vars that should be removed?
@@ -205,7 +205,7 @@
 
 /datum/reagent/medicine/c2/hercuri
 	name = "Hercuri"
-	description = "Not to be confused with element Mercury, this medicine excels in reverting effects of dangerous high-temperature environments. Prolonged exposure can cause hypothermia."
+	description = "Не путать с элементом Ртутью, это лекарство превосходно устраняет последствия опасных высокотемпературных сред. Длительное воздействие может вызвать переохлаждение."
 	color = "#F7FFA5"
 	overdose_threshold = 25
 	reagent_weight = 0.6
@@ -254,7 +254,7 @@
 
 /datum/reagent/medicine/c2/convermol
 	name = "Convermol"
-	description = "Restores oxygen deprivation while producing a lesser amount of toxic byproducts. Both scale with exposure to the drug and current amount of oxygen deprivation. Overdose causes toxic byproducts regardless of oxygen deprivation."
+	description = "Восстанавливает кислородное голодание, производя меньшее количество токсичных побочных продуктов. Оба эффекта зависят от воздействия препарата и текущего уровня кислородного голодания. Передозировка вызывает токсичные побочные продукты независимо от кислородного голодания."
 	color = "#FF6464"
 	overdose_threshold = 35 // at least 2 full syringes +some, this stuff is nasty if left in for long
 	ph = 5.6
@@ -284,7 +284,7 @@
 
 /datum/reagent/medicine/c2/tirimol
 	name = "Tirimol"
-	description = "An oxygen deprivation medication that causes fatigue. Prolonged exposure causes the patient to fall asleep once the medicine metabolizes."
+	description = "Лекарство от кислородного голодания, вызывающее усталость. Длительное воздействие заставляет пациента заснуть после метаболизма лекарства."
 	color = "#FF6464"
 	ph = 5.6
 	inverse_chem = /datum/reagent/inverse/healing/tirimol
@@ -317,7 +317,7 @@
 
 /datum/reagent/medicine/c2/seiver //a bit of a gray joke
 	name = "Seiver"
-	description = "A medicine that shifts functionality based on temperature. Hotter temperatures will heal more toxicity, while colder temperatures will heal larger amounts of toxicity but only while the patient is irradiated. Damages the heart." //CHEM HOLDER TEMPS, NOT AIR TEMPS
+	description = "Лекарство, которое меняет функциональность в зависимости от температуры. Более высокие температуры будут лечить больше токсичности, а более низкие температуры будут лечить большие объёмы токсичности, но только пока пациент облучён. Повреждает сердце." //ТЕМПЕРАТУРА ХИМ-ХОЛДЕРА, НЕ ВОЗДУХА
 	inverse_chem_val = 0.3
 	ph = 3.7
 	inverse_chem = /datum/reagent/inverse/technetium
@@ -362,7 +362,7 @@
 
 /datum/reagent/medicine/c2/multiver //enhanced with MULTIple medicines
 	name = "Multiver"
-	description = "A chem-purger that becomes more effective the more unique medicines present. Slightly heals toxicity but causes lung damage (mitigatable by unique medicines)."
+	description = "Очиститель химикатов, который становится более эффективным с увеличением количества уникальных лекарств. Слегка лечит токсичность, но наносит урон лёгким (смягчается уникальными лекарствами)."
 	inverse_chem = /datum/reagent/inverse/healing/monover
 	inverse_chem_val = 0.35
 	ph = 9.2
@@ -398,7 +398,7 @@
 
 /datum/reagent/medicine/c2/syriniver //Inject >> SYRINge
 	name = "Syriniver"
-	description = "A potent antidote for intravenous use with a narrow therapeutic index, it is considered an active prodrug of musiver."
+	description = "Мощное антидотное средство для внутривенного введения с узким терапевтическим индексом, считается активным пролекарством музивера."
 	color = "#8CDF24" // heavy saturation to make the color blend better
 	metabolization_rate = 0.75 * REAGENTS_METABOLISM
 	overdose_threshold = 6
@@ -444,7 +444,7 @@
 
 /datum/reagent/medicine/c2/musiver //MUScles
 	name = "Musiver"
-	description = "The active metabolite of syriniver. Causes muscle weakness on overdose"
+	description = "Активный метаболит сиринивера. Вызывает мышечную слабость при передозировке"
 	color = "#DFD54E"
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 25
@@ -485,7 +485,7 @@
 /*Suffix: Combo of healing, prob gonna get wack REAL fast*/
 /datum/reagent/medicine/c2/synthflesh
 	name = "Synthflesh"
-	description = "Heals brute and burn damage at the cost of toxicity (66% of damage healed). Patch, splash, and spray application only. 60u of pure synthflesh or 100u at lower purities can restore corpses husked by burns."
+	description = "Лечит физический и ожоговый урон ценой токсичности (66% от вылеченного урона). Только для пластырей, брызг и спреев. 60ед чистой синтплоти или 100ед при низкой чистоте могут восстановить трупы, обугленные ожогами."
 	color = "#FFEBEB"
 	ph = 7.2
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
@@ -515,7 +515,7 @@
 		carbies.updatehealth()
 
 	if(show_message && carbies.stat != DEAD)
-		to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
+		to_chat(carbies, span_danger("Вы чувствуете, как ваши ожоги и ушибы заживают! Жжёт как в аду!"))
 
 	carbies.add_mood_event("painful_medicine", /datum/mood_event/painful_medicine)
 
@@ -526,11 +526,11 @@
 	//don't try to unhusk mobs above burn damage threshold
 	if (carbies.getFireLoss() > UNHUSK_DAMAGE_THRESHOLD * 2.5)
 		if (show_message)
-			carbies.visible_message(span_minoralert("The liquid fails to properly stick on [carbies]. [carbies]'s burns need to be repaired first!"))
+			carbies.visible_message(span_minoralert("Жидкость не может должным образом прилипнуть к [carbies]. Ожоги [carbies] нужно сначала восстановить!"))
 		return
 	else if (carbies.getFireLoss() > UNHUSK_DAMAGE_THRESHOLD)
 		if (show_message)
-			carbies.visible_message(span_boldnotice("A rubbery liquid partially coats [carbies]'s burns... It seems more is required to fully unhusk!"))
+			carbies.visible_message(span_boldnotice("Резиновая жидкость частично покрывает ожоги [carbies]... Кажется, нужно больше, чтобы полностью восстановить!"))
 		return
 
 	var/datum/reagent/synthflesh = carbies.reagents.has_reagent(/datum/reagent/medicine/c2/synthflesh)
@@ -544,11 +544,11 @@
 	//when purity = 100%, 60u to unhusk, when purity = 60%, 100u to unhusk.
 	if(current_volume >= SYNTHFLESH_UNHUSK_MAX || current_volume * current_purity >= SYNTHFLESH_UNHUSK_AMOUNT)
 		carbies.cure_husk(BURN)
-		carbies.reagents.remove_reagent(/datum/reagent/medicine/c2/synthflesh, current_volume) // consume the synthflesh, it won't do anything in their blood
-		//we're avoiding using the phrases "burnt flesh" and "burnt skin" here because carbies could be a skeleton or a golem or something
-		carbies.visible_message(span_nicegreen("A rubbery liquid coats [carbies]'s burns. [carbies] looks a lot healthier!"))
+		carbies.reagents.remove_reagent(/datum/reagent/medicine/c2/synthflesh, current_volume) // поглощает синтплоть, она ничего не сделает в их крови
+		//мы избегаем фраз "обугленная плоть" и "обугленная кожа" здесь, потому что карби может быть скелетом или големом
+		carbies.visible_message(span_nicegreen("Резиновая жидкость покрывает ожоги [carbies]. [carbies] выглядит в разы здоровее!"))
 	else if (show_message)
-		carbies.visible_message(span_boldnotice("A rubbery liquid partially coats [carbies]'s burns... It seems more is required to fully unhusk!"))
+		carbies.visible_message(span_boldnotice("Резиновая жидкость частично покрывает ожоги [carbies]... Кажется, нужно больше, чтобы полностью восстановить!"))
 
 /******ORGAN HEALING******/
 /*Suffix: -rite*/
@@ -564,7 +564,7 @@
 */
 /datum/reagent/medicine/c2/penthrite
 	name = "Penthrite"
-	description = "An expensive medicine that aids with pumping blood around the body even without a heart, and prevents the heart from slowing down. Mixing it with epinephrine or atropine will cause an explosion."
+	description = "Дорогое лекарство, которое помогает перекачивать кровь по телу даже без сердца и предотвращает замедление работы сердца. Смешивание с адреналином или атропином вызовет взрыв."
 	color = "#F5F5F5"
 	overdose_threshold = 50
 	ph = 12.7
@@ -580,8 +580,8 @@
 	)
 
 /atom/movable/screen/alert/penthrite
-	name = "Strong Heartbeat"
-	desc = "Your heart beats with great force!"
+	name = "Сильное Сердцебиение"
+	desc = "Ваше сердце бьётся с огромной силой!"
 	icon_state = "penthrite"
 
 /datum/reagent/medicine/c2/penthrite/on_mob_metabolize(mob/living/user)
@@ -608,12 +608,12 @@
 		affected_mob.set_dizzy_if_lower(rand(0 SECONDS, 4 SECONDS) * REM * seconds_per_tick)
 
 		if(SPT_PROB(18, seconds_per_tick))
-			to_chat(affected_mob,span_danger("Your body is trying to give up, but your heart is still beating!"))
+			to_chat(affected_mob,span_danger("Ваше тело пытается сдаться, но ваше сердце всё ещё бьётся!"))
 
 	if(affected_mob.health <= (affected_mob.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*(2*normalise_creation_purity()))) //certain death below this threshold
 		REMOVE_TRAIT(affected_mob, TRAIT_STABLEHEART, type) //we have to remove the stable heart trait before we give them a heart attack
 		affected_mob.remove_traits(subject_traits, type)
-		to_chat(affected_mob, span_danger("You feel something rupturing inside your chest!"))
+		to_chat(affected_mob, span_danger("Вы чувствуете, как что-то разрывается у вас в груди!"))
 		if(!HAS_TRAIT(affected_mob, TRAIT_ANALGESIA))
 			affected_mob.emote("scream")
 		affected_mob.set_heartattack(TRUE)

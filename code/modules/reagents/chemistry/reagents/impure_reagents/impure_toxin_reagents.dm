@@ -8,7 +8,7 @@
 //Lipolicide - Impure Version
 /datum/reagent/impurity/ipecacide
 	name = "Ipecacide"
-	description = "An extremely gross substance that induces vomiting. It is produced when Lipolicide reactions are impure."
+	description = "Чрезвычайно противное вещество, вызывающее рвоту. Образуется при нечистых реакциях Липолицида."
 	ph = 7
 	liver_damage = 0
 
@@ -21,7 +21,7 @@
 //Formaldehyde - Impure Version
 /datum/reagent/impurity/methanol
 	name = "Methanol"
-	description = "A light, colourless liquid with a distinct smell. Ingestion can lead to blindness. It is a byproduct of organisms processing impure Formaldehyde."
+	description = "Лёгкая, бесцветная жидкость с характерным запахом. Проглатывание может привести к слепоте. Является побочным продуктом переработки нечистого Формальдегида организмами."
 	color = "#aae7e4"
 	ph = 7
 	liver_damage = 0
@@ -35,7 +35,7 @@
 //Chloral Hydrate - Impure Version
 /datum/reagent/impurity/chloralax
 	name = "Chloralax"
-	description = "An oily, colorless and slightly toxic liquid. It is produced when impure choral hydrate is broken down inside an organism."
+	description = "Маслянистая, бесцветная и слегка токсичная жидкость. Образуется при расщеплении нечистого хлоралгидрата внутри организма."
 	color = "#387774"
 	ph = 7
 	liver_damage = 0
@@ -48,7 +48,7 @@
 //Mindbreaker Toxin - Impure Version
 /datum/reagent/impurity/rosenol
 	name = "Rosenol"
-	description = "A strange, blue liquid that is produced during impure mindbreaker toxin reactions. Historically it has been abused to write poetry."
+	description = "Странная синяя жидкость, которая образуется во время нечистых реакций токсина разрушителя разума. Исторически её злоупотребляли для написания поэзии."
 	color = "#0963ad"
 	ph = 7
 	liver_damage = 0
@@ -60,7 +60,7 @@
 	if(!tongue)
 		return
 	if(SPT_PROB(4.0, seconds_per_tick))
-		owner.manual_emote("clicks with [owner.p_their()] tongue.")
-		owner.say("Noice.", forced = /datum/reagent/impurity/rosenol)
+		owner.manual_emote("щёлкает [owner.p_their()] языком.")
+		owner.say("Классно.", forced = /datum/reagent/impurity/rosenol)
 	if(SPT_PROB(2.0, seconds_per_tick))
-		owner.say(pick("Ah! That was a mistake!", "Horrible.", "Watch out everybody, the potato is really hot.", "When I was six I ate a bag of plums.", "And if there is one thing I can't stand it's tomatoes.", "And if there is one thing I love it's tomatoes.", "We had a captain who was so strict, you weren't allowed to breathe in their station.", "The unrobust ones just used to keel over and die, you'd hear them going down behind you."), forced = /datum/reagent/impurity/rosenol)
+		owner.say(pick("Ах! Это было ошибкой!", "Ужасно.", "Внимание всем, картошка очень горячая.", "Когда мне было шесть, я съел пакет слив.", "И если есть что-то, что я не выношу, так это помидоры.", "И если есть что-то, что я люблю, так это помидоры.", "У нас был капитан, который был настолько строг, что на его станции нельзя было дышать.", "Анробасты просто падали замертво, ты слышал, как они падают позади тебя."), forced = /datum/reagent/impurity/rosenol)
