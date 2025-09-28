@@ -42,8 +42,8 @@
 	weight = CLONER_FAILURE_COMMON
 
 /datum/experimental_cloner_fuckup/bald/apply_to_mob(mob/living/carbon/human/victim)
-	victim.set_facial_hairstyle("Shaved", update = FALSE)
-	victim.set_hairstyle("Bald", update = TRUE)
+	victim.set_facial_hairstyle("Выбритый", update = FALSE)
+	victim.set_hairstyle("Лысый", update = TRUE)
 
 /datum/experimental_cloner_fuckup/bald/is_valid(species_type)
 	return !is_path_in_list(/datum/species/human, /datum/species/ethereal)

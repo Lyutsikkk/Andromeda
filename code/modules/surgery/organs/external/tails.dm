@@ -226,7 +226,7 @@
 	feature_key = FEATURE_TAIL_XENO
 	imprint_on_next_insertion = FALSE
 	/// We don't want to bother writing this in DNA, just use this appearance
-	var/default_appearance = "Xeno"
+	var/default_appearance = "Ксеноморф"
 
 /datum/bodypart_overlay/mutant/tail/xeno/New()
 	. = ..()
@@ -239,7 +239,7 @@
 	set_appearance_from_name(default_appearance)
 
 /datum/bodypart_overlay/mutant/tail/xeno/queen
-	default_appearance = "Xeno Queen"
+	default_appearance = "Королева ксеноморфов"
 
 /obj/item/organ/tail/lizard
 	name = "lizard tail"

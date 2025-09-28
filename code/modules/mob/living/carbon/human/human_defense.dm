@@ -511,8 +511,8 @@
 		if(affecting.body_zone == BODY_ZONE_HEAD && prob(min(acidpwr * acid_volume * 0.1, 90))) //Applies disfigurement
 			damage_mod = 2
 			emote("scream")
-			set_facial_hairstyle("Shaved", update = FALSE)
-			set_hairstyle("Bald") //This calls update_body_parts()
+			set_facial_hairstyle("Выбритый", update = FALSE)
+			set_hairstyle("Лысый") //This calls update_body_parts()
 			ADD_TRAIT(src, TRAIT_DISFIGURED, TRAIT_GENERIC)
 
 		apply_damage(acidity * damage_mod, BRUTE, affecting)

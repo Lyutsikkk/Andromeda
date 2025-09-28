@@ -37,7 +37,7 @@
 	var/head_flags = HEAD_DEFAULT_FEATURES
 
 	/// Hair style
-	var/hairstyle = "Bald"
+	var/hairstyle = "Лысый"
 	/// Hair colour and style
 	var/hair_color = COLOR_BLACK
 	/// Hair alpha
@@ -48,7 +48,7 @@
 	var/list/hair_masks
 
 	///Facial hair style
-	var/facial_hairstyle = "Shaved"
+	var/facial_hairstyle = "Выбритый"
 	///Facial hair color
 	var/facial_hair_color = COLOR_BLACK
 	///Facial hair alpha
@@ -58,8 +58,8 @@
 
 	/// Gradient styles, if any
 	var/list/gradient_styles = list(
-		"None",	//Hair gradient style
-		"None",	//Facial hair gradient style
+		"Ничего",	//Hair gradient style
+		"Ничего",	//Facial hair gradient style
 	)
 	/// Gradient colors, if any
 	var/list/gradient_colors = list(

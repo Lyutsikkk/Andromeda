@@ -15,14 +15,14 @@
 /datum/quirk/item_quirk/bald/add(client/client_source)
 	var/mob/living/carbon/human/human_holder = quirk_holder
 	old_hair = human_holder.hairstyle
-	human_holder.set_hairstyle("Bald", update = TRUE)
+	human_holder.set_hairstyle("Лысый", update = TRUE)
 	RegisterSignal(human_holder, COMSIG_MOB_EQUIPPED_ITEM, PROC_REF(equip_hat))
 	RegisterSignal(human_holder, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(unequip_hat))
 
 /datum/quirk/item_quirk/bald/add_unique(client/client_source)
 	var/obj/item/clothing/head/wig/natural/baldie_wig = new(get_turf(quirk_holder))
-	if(old_hair == "Bald")
-		baldie_wig.hairstyle = pick(SSaccessories.hairstyles_list - "Bald")
+	if(old_hair == "Лысый")
+		baldie_wig.hairstyle = pick(SSaccessories.hairstyles_list - "Лысый")
 	else
 		baldie_wig.hairstyle = old_hair
 
@@ -67,7 +67,7 @@
 /datum/quirk/item_quirk/bald/remove()
 	. = ..()
 	var/mob/living/carbon/human/human_holder = quirk_holder
-	if(human_holder.hairstyle == "Bald" && old_hair != "Bald")
+	if(human_holder.hairstyle == "Лысый" && old_hair != "Лысый")
 		human_holder.set_hairstyle(old_hair, update = TRUE)
 	UnregisterSignal(human_holder, list(COMSIG_MOB_EQUIPPED_ITEM, COMSIG_MOB_UNEQUIPPED_ITEM))
 	human_holder.clear_mood_event("bad_hair_day")

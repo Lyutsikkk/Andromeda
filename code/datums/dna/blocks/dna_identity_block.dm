@@ -57,7 +57,7 @@
 
 /datum/dna_block/identity/hair_style/apply_to_mob(mob/living/carbon/human/target, dna_hash)
 	if(HAS_TRAIT(target, TRAIT_BALD))
-		target.set_hairstyle("Bald", update = FALSE)
+		target.set_hairstyle("Лысый", update = FALSE)
 		return
 	var/style = SSaccessories.hairstyles_list[deconstruct_block(get_block(dna_hash), length(SSaccessories.hairstyles_list))]
 	target.set_hairstyle(style, update = FALSE)
@@ -78,7 +78,7 @@
 
 /datum/dna_block/identity/facial_style/apply_to_mob(mob/living/carbon/human/target, dna_hash)
 	if(HAS_TRAIT(src, TRAIT_SHAVED))
-		target.set_facial_hairstyle("Shaved", update = FALSE)
+		target.set_facial_hairstyle("Выбритый", update = FALSE)
 		return
 	var/style = SSaccessories.facial_hairstyles_list[deconstruct_block(get_block(dna_hash), length(SSaccessories.facial_hairstyles_list))]
 	target.set_facial_hairstyle(style, update = FALSE)

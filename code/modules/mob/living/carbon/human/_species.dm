@@ -811,7 +811,7 @@ GLOBAL_LIST_EMPTY(features_by_species)
 
 	if(time_since_irradiated > RAD_MOB_HAIRLOSS && SPT_PROB(RAD_MOB_HAIRLOSS_PROB, seconds_per_tick))
 		var/obj/item/bodypart/head/head = source.get_bodypart(BODY_ZONE_HEAD)
-		if(!(source.hairstyle == "Bald") && (head?.head_flags & (HEAD_HAIR|HEAD_FACIAL_HAIR)))
+		if(!(source.hairstyle == "Лысый") && (head?.head_flags & (HEAD_HAIR|HEAD_FACIAL_HAIR)))
 			to_chat(source, span_danger("Ваши волосы начинают выпадать клочьями..."))
 			addtimer(CALLBACK(src, PROC_REF(go_bald), source), 5 SECONDS)
 
@@ -824,8 +824,8 @@ GLOBAL_LIST_EMPTY(features_by_species)
 /datum/species/proc/go_bald(mob/living/carbon/human/target)
 	if(QDELETED(target)) //may be called from a timer
 		return
-	target.set_facial_hairstyle("Shaved", update = FALSE)
-	target.set_hairstyle("Bald") //This calls update_body_parts()
+	target.set_facial_hairstyle("Выбритый", update = FALSE)
+	target.set_hairstyle("Лысый") //This calls update_body_parts()
 
 //////////////////
 // ATTACK PROCS //

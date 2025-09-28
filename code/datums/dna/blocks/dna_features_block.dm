@@ -105,7 +105,7 @@
 	feature_key = FEATURE_MOTH_WINGS
 
 /datum/dna_block/feature/moth_wing/create_unique_block(mob/living/carbon/human/target)
-	if(target.dna.features[feature_key] == "Burnt Off") // Why is this snowflake check a thing. Please find a way to fix this later
+	if(target.dna.features[feature_key] == "Обгоревшие") // Why is this snowflake check a thing. Please find a way to fix this later
 		return random_string(block_length, GLOB.hex_characters)
 	return construct_block(SSaccessories.moth_wings_list.Find(target.dna.features[feature_key]), length(SSaccessories.moth_wings_list))
 
@@ -116,7 +116,7 @@
 	feature_key = FEATURE_MOTH_ANTENNAE
 
 /datum/dna_block/feature/moth_antenna/create_unique_block(mob/living/carbon/human/target)
-	if(target.dna.features[feature_key] == "Burnt Off")
+	if(target.dna.features[feature_key] == "Обгоревшие")
 		return random_string(block_length, GLOB.hex_characters)
 	return construct_block(SSaccessories.moth_antennae_list.Find(target.dna.features[feature_key]), length(SSaccessories.moth_antennae_list))
 

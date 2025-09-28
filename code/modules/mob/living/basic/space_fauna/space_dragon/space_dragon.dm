@@ -102,7 +102,7 @@
 	if(!isnull(chosen_colour))
 		return
 	if(client.get_award_status(/datum/award/achievement/misc/sharkdragon))
-		if(tgui_alert(src, "Shall you take the dragon form or the shark form?","Shark Form Unlocked", list("Dragon","Shark")) == "Shark")
+		if(tgui_alert(src, "Shall you take the dragon form or the shark form?","Shark Form Unlocked", list("Драконьи","Акулий")) == "Акулий")  // Rewokin: возможно тут я ошибся, на всякий, тут было это list("Dragon","Shark")) == "Shark")
 			sharkify()
 	rename_dragon()
 	select_colour()

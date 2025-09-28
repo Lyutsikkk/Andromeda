@@ -297,7 +297,7 @@
 */
 /obj/item/food/sandwich/death/proc/check_liked(mob/living/carbon/human/consumer)
 	// Closest thing to a mullet we have
-	if(consumer.hairstyle == "Gelled Back" && is_type_in_list(consumer.get_item_by_slot(ITEM_SLOT_ICLOTHING), correct_clothing))
+	if(consumer.hairstyle == "Заглаженные назад" && is_type_in_list(consumer.get_item_by_slot(ITEM_SLOT_ICLOTHING), correct_clothing))
 		return FOOD_LIKED
 	return FOOD_ALLERGIC
 

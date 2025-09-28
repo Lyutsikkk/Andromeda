@@ -39,8 +39,8 @@
 	equipped_on.set_eye_color(COLOR_BLACK)
 	equipped_on.gender = MALE
 	equipped_on.skin_tone = "caucasian3"
-	equipped_on.hairstyle = "Business Hair 3"
-	equipped_on.facial_hairstyle = "Shaved"
+	equipped_on.hairstyle = "Деловая причёска 3"
+	equipped_on.facial_hairstyle = "Выбритый"
 	equipped_on.hair_color = COLOR_BLACK
 	equipped_on.facial_hair_color = COLOR_BLACK
 	equipped_on.update_body(is_creating = TRUE)

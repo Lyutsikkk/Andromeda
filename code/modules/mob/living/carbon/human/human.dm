@@ -484,11 +484,11 @@
 //Used for new human mobs created by cloning/goleming/podding
 /mob/living/carbon/human/proc/set_cloned_appearance()
 	if(gender == MALE)
-		set_facial_hairstyle("Full Beard", update = FALSE)
+		set_facial_hairstyle("Борода (Полная)", update = FALSE)
 	else
-		set_facial_hairstyle("Shaved", update = FALSE)
-	set_hairstyle(pick("Bedhead", "Bedhead 2", "Bedhead 3"), update = FALSE)
-	underwear = "Nude"
+		set_facial_hairstyle("Выбритый", update = FALSE)
+	set_hairstyle(pick("Всклокоченные", "Всклокоченные 2", "Всклокоченные 3"), update = FALSE)
+	underwear = "Ничего"
 	update_body(is_creating = TRUE)
 
 /mob/living/carbon/human/singularity_pull(atom/singularity, current_size)

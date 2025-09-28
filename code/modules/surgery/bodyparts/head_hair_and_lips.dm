@@ -91,7 +91,7 @@
 			. += facial_hair_overlay
 			//Gradients
 			var/facial_hair_gradient_style = gradient_styles[GRADIENT_FACIAL_HAIR_KEY]
-			if(facial_hair_gradient_style != "None")
+			if(facial_hair_gradient_style != "Ничего")
 				var/facial_hair_gradient_color = gradient_colors[GRADIENT_FACIAL_HAIR_KEY]
 				var/image/facial_hair_gradient_overlay = get_gradient_overlay(icon(sprite_accessory.icon, sprite_accessory.icon_state), -HAIR_LAYER, SSaccessories.facial_hair_gradients_list[facial_hair_gradient_style], facial_hair_gradient_color)
 				. += facial_hair_gradient_overlay
@@ -124,7 +124,7 @@
 				. += hair_overlay
 				//Gradients
 				var/hair_gradient_style = gradient_styles[GRADIENT_HAIR_KEY]
-				if(hair_gradient_style != "None")
+				if(hair_gradient_style != "Ничего")
 					var/hair_gradient_color = gradient_colors[GRADIENT_HAIR_KEY]
 					var/image/hair_gradient_overlay = get_gradient_overlay(base_icon, hair_overlay.layer, SSaccessories.hair_gradients_list[hair_gradient_style], hair_gradient_color)
 					hair_gradient_overlay.pixel_z = hair_sprite_accessory.y_offset

@@ -224,8 +224,8 @@
 /datum/antagonist/rev/head/get_preview_icon()
 	var/icon/final_icon = render_preview_outfit(preview_outfit)
 
-	final_icon.Blend(make_assistant_icon("Business Hair"), ICON_UNDERLAY, -8, 0)
-	final_icon.Blend(make_assistant_icon("CIA"), ICON_UNDERLAY, 8, 0)
+	final_icon.Blend(make_assistant_icon("Деловая причёска"), ICON_UNDERLAY, -8, 0)
+	final_icon.Blend(make_assistant_icon("ЦРУ"), ICON_UNDERLAY, 8, 0)
 
 	// Apply the rev head HUD, but scale up the preview icon a bit beforehand.
 	// Otherwise, the R gets cut off.

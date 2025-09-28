@@ -27,9 +27,9 @@
 	if(!visuals_only)
 		return
 
-	user.set_facial_hairstyle("Shaved", update = FALSE)
+	user.set_facial_hairstyle("Выбритый", update = FALSE)
 	user.set_haircolor("#4B3D28", update = FALSE)
-	user.set_hairstyle("Business Hair")
+	user.set_hairstyle("Деловая причёска")
 
 /datum/outfit/cyber_police/post_equip(mob/living/carbon/human/user, visuals_only)
 	var/obj/item/clothing/under/officer_uniform = user.w_uniform

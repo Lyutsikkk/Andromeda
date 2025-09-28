@@ -8,7 +8,7 @@
 		TRAIT_PLANT_SAFE,
 	)
 	mutant_organs = list(
-		/obj/item/organ/pod_hair = "None",
+		/obj/item/organ/pod_hair = "Ничего",
 	)
 	inherent_biotypes = MOB_ORGANIC | MOB_HUMANOID | MOB_PLANT
 	inherent_factions = list(FACTION_PLANTS, FACTION_VINES)
@@ -41,7 +41,7 @@
 
 /datum/species/pod/prepare_human_for_preview(mob/living/carbon/human/human)
 	human.dna.features[FEATURE_MUTANT_COLOR] = "#886600"
-	human.dna.features[FEATURE_POD_HAIR] = "Rose"
+	human.dna.features[FEATURE_POD_HAIR] = "Роза"
 	human.update_body(is_creating = TRUE)
 
 /datum/species/pod/get_physical_attributes()

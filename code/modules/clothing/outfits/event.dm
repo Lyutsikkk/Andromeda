@@ -1,5 +1,5 @@
-/datum/outfit/santa //ho ho ho!
-	name = "Santa Claus"
+/datum/outfit/santa //ho ho ho! /// Теперь он дед мороз >:)
+	name = "Дед Мороз"
 
 	uniform = /obj/item/clothing/under/color/red
 	suit = /obj/item/clothing/suit/space/santa
@@ -17,11 +17,11 @@
 /datum/outfit/santa/post_equip(mob/living/carbon/human/user, visuals_only = FALSE)
 	if(visuals_only)
 		return
-	user.fully_replace_character_name(user.real_name, "Santa Claus")
+	user.fully_replace_character_name(user.real_name, "Дед Мороз")
 	user.mind.set_assigned_role(SSjob.get_job_type(/datum/job/santa))
 
-	user.hairstyle = "Long Hair 3"
-	user.facial_hairstyle = "Beard (Full)"
+	user.hairstyle = "Длинные волосы 3"
+	user.facial_hairstyle = "Борода (Полная)"
 	user.hair_color = COLOR_WHITE
 	user.facial_hair_color = COLOR_WHITE
 	user.update_body_parts(update_limb_data = TRUE)

@@ -8,7 +8,7 @@
 	worn_icon_state = "wig"
 	flags_inv = HIDEHAIR
 	color = COLOR_BLACK
-	var/hairstyle = "Very Long Hair"
+	var/hairstyle = "Очень длинные волосы"
 	var/adjustablecolor = TRUE //can color be changed manually?
 
 /obj/item/clothing/head/wig/Initialize(mapload)
@@ -50,7 +50,7 @@
 	hair_overlay.overlays += emissive_blocker(hair_overlay.icon, hair_overlay.icon_state, src, alpha = hair_overlay.alpha)
 
 /obj/item/clothing/head/wig/attack_self(mob/user)
-	var/new_style = tgui_input_list(user, "Select a hairstyle", "Wig Styling", SSaccessories.hairstyles_list - "Bald")
+	var/new_style = tgui_input_list(user, "Select a hairstyle", "Wig Styling", SSaccessories.hairstyles_list - "Лысый")
 	var/newcolor = adjustablecolor ? input(usr,"","Choose Color",color) as color|null : null
 	if(!user.can_perform_action(src))
 		return
@@ -84,7 +84,7 @@
 		var/obj/item/clothing/head/wig/wig = target.head
 		selected_hairstyle = wig.hairstyle
 		selected_hairstyle_color = wig.color
-	else if((noggin.head_flags & HEAD_HAIR) && target.hairstyle != "Bald")
+	else if((noggin.head_flags & HEAD_HAIR) && target.hairstyle != "Лысый")
 		selected_hairstyle = target.hairstyle
 		selected_hairstyle_color = "[target.hair_color]"
 
@@ -96,7 +96,7 @@
 	return ITEM_INTERACT_SUCCESS
 
 /obj/item/clothing/head/wig/random/Initialize(mapload)
-	hairstyle = pick(SSaccessories.hairstyles_list - "Bald") //Don't want invisible wig
+	hairstyle = pick(SSaccessories.hairstyles_list - "Лысый") //Don't want invisible wig
 	add_atom_colour("#[random_short_color()]", FIXED_COLOUR_PRIORITY)
 	. = ..()
 
@@ -108,7 +108,7 @@
 	custom_price = PAYCHECK_COMMAND
 
 /obj/item/clothing/head/wig/natural/Initialize(mapload)
-	hairstyle = pick(SSaccessories.hairstyles_list - "Bald")
+	hairstyle = pick(SSaccessories.hairstyles_list - "Лысый")
 	. = ..()
 
 /obj/item/clothing/head/wig/natural/visual_equipped(mob/living/carbon/human/user, slot)

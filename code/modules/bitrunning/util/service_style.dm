@@ -18,6 +18,6 @@
 	var/datum/sprite_accessory/hair/picked_hair = pick(approved_hairstyles)
 	var/picked_color = pick(approved_hair_colors)
 
-	set_facial_hairstyle("Shaved", update = FALSE)
+	set_facial_hairstyle("Выбритый", update = FALSE)
 	set_haircolor(picked_color, update = FALSE)
 	set_hairstyle(initial(picked_hair.name))

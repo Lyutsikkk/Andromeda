@@ -54,9 +54,9 @@
 	//your underwear is belong to us
 	if(ishuman(owner))
 		var/mob/living/carbon/human/human = owner //CARBON WILL NEVER BE REAL!!!!!
-		human.underwear = "Nude"
-		human.undershirt = "Nude"
-		human.socks = "Nude"
+		human.underwear = "Ничего"
+		human.undershirt = "Ничего"
+		human.socks = "Ничего"
 
 	owner.update_body()
 

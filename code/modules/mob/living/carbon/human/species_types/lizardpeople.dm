@@ -13,9 +13,9 @@
 	mutant_organs = list(
 		/obj/item/organ/horns = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/frills = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/snout = "Round",
+		/obj/item/organ/snout = "Круглый",
 		/obj/item/organ/spines = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/tail/lizard = "Smooth",
+		/obj/item/organ/tail/lizard = "Гладкий",
 	)
 	mutanttongue = /obj/item/organ/tongue/lizard
 	mutanteyes = /obj/item/organ/eyes/lizard

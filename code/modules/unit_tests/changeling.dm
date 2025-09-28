@@ -75,12 +75,12 @@
 	// The more DNA features and random things we change, the more likely we are to catch something not updating correctly.
 	// Yeah guess who/what this is, I dare you.
 	ling.dna.features[FEATURE_MUTANT_COLOR] = "#886600"
-	ling.dna.features[FEATURE_TAIL_LIZARD] = "Smooth"
-	ling.dna.features[FEATURE_SNOUT] = "Sharp + Light"
-	ling.dna.features[FEATURE_HORNS] = "Curled"
-	ling.dna.features[FEATURE_FRILLS] = "Short"
-	ling.dna.features[FEATURE_SPINES] = "Long + Membrane"
-	ling.dna.features[FEATURE_LIZARD_MARKINGS] = "Light Belly"
+	ling.dna.features[FEATURE_TAIL_LIZARD] = "Гладкий"
+	ling.dna.features[FEATURE_SNOUT] = "Острый + Светлый"
+	ling.dna.features[FEATURE_HORNS] = "Завитой"
+	ling.dna.features[FEATURE_FRILLS] = "Короткие"
+	ling.dna.features[FEATURE_SPINES] = "Длинные + Мембрана"
+	ling.dna.features[FEATURE_LIZARD_MARKINGS] = "Светлое брюшко"
 	ling.dna.features[FEATURE_LEGS] = DIGITIGRADE_LEGS
 	ling.set_eye_color(COLOR_WHITE)
 	ling.dna.update_ui_block(/datum/dna_block/identity/eye_colors)

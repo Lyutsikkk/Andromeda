@@ -28,7 +28,7 @@
 	user.visible_message(span_suicide("[user] is donning [src]! It looks like [user.p_theyre()] trying to be nice to girls."))
 	user.say("M'lady.", forced = "fedora suicide")
 	sleep(1 SECONDS)
-	H.facial_hairstyle = "Neckbeard"
+	H.facial_hairstyle = "Шея"
 	return BRUTELOSS
 
 /obj/item/clothing/head/fedora/carpskin

@@ -3,8 +3,8 @@
 
 /obj/effect/mob_spawn/corpse/human/syndicatesoldier
 	name = "Syndicate Operative"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 	outfit = /datum/outfit/syndicatesoldiercorpse
 
 /datum/outfit/syndicatesoldiercorpse
@@ -22,8 +22,8 @@
 
 /obj/effect/mob_spawn/corpse/human/syndicatecommando
 	name = "Syndicate Commando"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 	outfit = /datum/outfit/syndicatecommandocorpse
 
 /datum/outfit/syndicatecommandocorpse
@@ -62,8 +62,8 @@
 
 /obj/effect/mob_spawn/corpse/human/syndicatestormtrooper
 	name = "Syndicate Stormtrooper"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 	outfit = /datum/outfit/syndicatestormtroopercorpse
 
 /datum/outfit/syndicatestormtroopercorpse
@@ -79,8 +79,8 @@
 
 /obj/effect/mob_spawn/corpse/human/syndicatepilot
 	name = "Syndicate Pilot"
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 	outfit = /datum/outfit/syndicatepilotcorpse
 
 /datum/outfit/syndicatepilotcorpse
@@ -124,8 +124,8 @@
 	name = "Pirate"
 	skin_tone = "caucasian1" //all pirates are white because it's easier that way
 	outfit = /datum/outfit/piratecorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 
 /datum/outfit/piratecorpse
 	name = "Pirate Corpse"
@@ -184,8 +184,8 @@
 /obj/effect/mob_spawn/corpse/human/russian
 	name = "Russian"
 	outfit = /datum/outfit/russiancorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 
 /datum/outfit/russiancorpse
 	name = "Russian Corpse"
@@ -235,8 +235,8 @@
 /obj/effect/mob_spawn/corpse/human/wizard
 	name = "Space Wizard Corpse"
 	outfit = /datum/outfit/wizardcorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Beard (Very Long)"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Борода (Очень длинная)"
 	facial_haircolor = COLOR_WHITE
 	skin_tone = "caucasian1"
 
@@ -304,8 +304,8 @@
 /obj/effect/mob_spawn/corpse/human/nanotrasensoldier
 	name = "\improper Nanotrasen Private Security Officer"
 	outfit = /datum/outfit/nanotrasensoldiercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 
 /datum/outfit/nanotrasensoldiercorpse
 	name = "\improper NT Private Security Officer Corpse"
@@ -323,8 +323,8 @@
 /obj/effect/mob_spawn/corpse/human/nanotrasenassaultsoldier
 	name = "\improper Nanotrasen Assault Officer Corpse"
 	outfit = /datum/outfit/nanotrasenassaultsoldiercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 
 /datum/outfit/nanotrasenassaultsoldiercorpse
 	name = "\improper NT Assault Officer Corpse"
@@ -342,8 +342,8 @@
 /obj/effect/mob_spawn/corpse/human/nanotrasenelitesoldier
 	name = "\improper Nanotrasen Elite Assault Officer Corpse"
 	outfit = /datum/outfit/nanotrasenelitesoldiercorpse
-	hairstyle = "Bald"
-	facial_hairstyle = "Shaved"
+	hairstyle = "Лысый"
+	facial_hairstyle = "Выбритый"
 
 /datum/outfit/nanotrasenelitesoldiercorpse
 	name = "\improper NT Elite Assault Officer Corpse"
@@ -357,7 +357,7 @@
 
 /obj/effect/mob_spawn/corpse/human/cat_butcher
 	name = "The Cat Surgeon"
-	hairstyle = "Cut Hair"
+	hairstyle = "Стрижка"
 	facial_hairstyle = "Watson Mustache"
 	skin_tone = "caucasian1"
 	outfit = /datum/outfit/cat_butcher
@@ -392,9 +392,9 @@
 
 /obj/effect/mob_spawn/corpse/human/generic_assistant
 	name = "Generic Assistant"
-	hairstyle = "Short Hair"
+	hairstyle = "Короткие волосы"
 	haircolor = COLOR_BLACK
-	facial_hairstyle = "Shaved"
+	facial_hairstyle = "Выбритый"
 	skin_tone = "caucasian1"
 	outfit = /datum/outfit/job/assistant/consistent
 

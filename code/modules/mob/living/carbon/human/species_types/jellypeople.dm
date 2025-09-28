@@ -108,7 +108,7 @@
 
 /datum/species/jelly/prepare_human_for_preview(mob/living/carbon/human/human)
 	human.dna.features[FEATURE_MUTANT_COLOR] = COLOR_PINK
-	human.hairstyle = "Bob Hair 2"
+	human.hairstyle = "Каре 2"
 	human.hair_color = COLOR_PINK
 	human.update_body(is_creating = TRUE)
 
@@ -302,7 +302,7 @@
 
 	var/mob/living/carbon/human/spare = new /mob/living/carbon/human(H.loc)
 
-	spare.underwear = "Nude"
+	spare.underwear = "Ничего"
 	H.dna.copy_dna(spare.dna, COPY_DNA_SE|COPY_DNA_SPECIES|COPY_DNA_MUTATIONS)
 	spare.dna.features[FEATURE_MUTANT_COLOR] = "#[pick("7F", "FF")][pick("7F", "FF")][pick("7F", "FF")]"
 	spare.dna.update_uf_block(/datum/dna_block/feature/mutant_color)

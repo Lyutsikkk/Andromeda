@@ -191,7 +191,7 @@
 
 /datum/species/human/felinid/prepare_human_for_preview(mob/living/carbon/human/human_for_preview)
 	human_for_preview.set_haircolor("#ffcccc", update = FALSE) // pink
-	human_for_preview.set_hairstyle("Hime Cut", update = TRUE)
+	human_for_preview.set_hairstyle("Стрижка Химе", update = TRUE)
 
 	var/obj/item/organ/ears/cat/cat_ears = human_for_preview.get_organ_by_type(/obj/item/organ/ears/cat)
 	if (cat_ears)

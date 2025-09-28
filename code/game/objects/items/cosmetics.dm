@@ -203,9 +203,9 @@
 
 /obj/item/razor/proc/shave(mob/living/carbon/human/skinhead, location = BODY_ZONE_PRECISE_MOUTH)
 	if(location == BODY_ZONE_PRECISE_MOUTH)
-		skinhead.set_facial_hairstyle("Shaved", update = TRUE)
+		skinhead.set_facial_hairstyle("Выбритый", update = TRUE)
 	else
-		skinhead.set_hairstyle("Skinhead", update = TRUE)
+		skinhead.set_hairstyle("Бритоголовый", update = TRUE)
 	playsound(loc, 'sound/items/tools/welder2.ogg', 20, TRUE)
 
 /obj/item/razor/attack(mob/target_mob, mob/living/user, list/modifiers, list/attack_modifiers)
@@ -253,7 +253,7 @@
 			if(!(noggin.head_flags & HEAD_FACIAL_HAIR))
 				to_chat(user, span_warning("There is no facial hair to shave!"))
 				return
-			if(human_target.facial_hairstyle == "Shaved")
+			if(human_target.facial_hairstyle == "Выбритый")
 				to_chat(user, span_warning("Already clean-shaven!"))
 				return
 
@@ -307,7 +307,7 @@
 			if(!(noggin.head_flags & HEAD_HAIR))
 				to_chat(user, span_warning("There is no hair to shave!"))
 				return
-			if(human_target.hairstyle == "Bald" || human_target.hairstyle == "Balding Hair" || human_target.hairstyle == "Skinhead")
+			if(human_target.hairstyle == "Лысый" || human_target.hairstyle == "Лысеющие волосы" || human_target.hairstyle == "Бритоголовый")
 				to_chat(user, span_warning("There is not enough hair left to shave!"))
 				return
 

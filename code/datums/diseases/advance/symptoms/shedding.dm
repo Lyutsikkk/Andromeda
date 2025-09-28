@@ -32,12 +32,12 @@
 		var/mob/living/carbon/human/affected_human = affected_living
 		switch(disease.stage)
 			if(3, 4)
-				if((affected_human.hairstyle == "Bald") && (affected_human.hairstyle != "Balding Hair"))
+				if((affected_human.hairstyle == "Лысый") && (affected_human.hairstyle != "Лысеющие волосы"))
 					to_chat(affected_human, span_warning("Волосы начинают выпадать клочьями..."))
 					addtimer(CALLBACK(src, PROC_REF(baldify), affected_human, FALSE), 5 SECONDS)
 			if(5)
-				if((affected_human.facial_hairstyle != "Shaved") || (affected_human.hairstyle != "Bald"))
-					if(affected_human.hairstyle == "Balding Hair")
+				if((affected_human.facial_hairstyle != "Выбритый") || (affected_human.hairstyle != "Лысый"))
+					if(affected_human.hairstyle == "Лысеющие волосы")
 						to_chat(affected_human, span_warning("Остатки волос начинают выпадать клочьями..."))
 					else
 						to_chat(affected_human, span_warning("Волосы начинают выпадать клочьями..."))
@@ -45,7 +45,7 @@
 
 /datum/symptom/shedding/proc/baldify(mob/living/carbon/human/baldie, fully_bald)
 	if(fully_bald)
-		baldie.set_facial_hairstyle("Shaved", update = FALSE)
-		baldie.set_hairstyle("Bald") //this will call update_body_parts()
+		baldie.set_facial_hairstyle("Выбритый", update = FALSE)
+		baldie.set_hairstyle("Лысый") //this will call update_body_parts()
 	else
-		baldie.set_hairstyle("Balding Hair")
+		baldie.set_hairstyle("Лысеющие волосы")

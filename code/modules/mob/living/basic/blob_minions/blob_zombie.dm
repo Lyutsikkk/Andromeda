@@ -71,8 +71,8 @@
 	if(new_corpse.wear_suit)
 		maxHealth += new_corpse.get_armor_rating(MELEE)
 		health = maxHealth
-	new_corpse.set_facial_hairstyle("Shaved", update = FALSE)
-	new_corpse.set_hairstyle("Bald", update = TRUE)
+	new_corpse.set_facial_hairstyle("Выбритый", update = FALSE)
+	new_corpse.set_hairstyle("Лысый", update = TRUE)
 	new_corpse.forceMove(src)
 	corpse = new_corpse
 	copy_overlays(corpse, TRUE)

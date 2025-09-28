@@ -133,12 +133,12 @@ MAPPING_DIRECTIONAL_HELPERS(/obj/structure/mirror/broken, 28)
 
 /obj/structure/mirror/proc/change_beard(mob/living/carbon/human/beard_dresser)
 	if(beard_dresser.physique == FEMALE)
-		if(beard_dresser.facial_hairstyle == "Shaved")
+		if(beard_dresser.facial_hairstyle == "Выбритый")
 			balloon_alert(beard_dresser, "nothing to shave!")
 			return TRUE
 		var/shave_beard = tgui_alert(beard_dresser, "Shave your beard?", "Grooming", list("Yes", "No"))
 		if(shave_beard == "Yes")
-			beard_dresser.set_facial_hairstyle("Shaved", update = TRUE)
+			beard_dresser.set_facial_hairstyle("Выбритый", update = TRUE)
 		return TRUE
 
 	var/new_style = tgui_input_list(beard_dresser, "Select a facial hairstyle", "Grooming", SSaccessories.facial_hairstyles_list)
